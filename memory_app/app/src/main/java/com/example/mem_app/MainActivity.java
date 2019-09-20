@@ -16,12 +16,7 @@ import com.example.mem_app.HttpReqs.SignupHttp;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private TextView text_username;
-//    private TextView text_password;
-//    private Button button_login;
-//    private Button
-//
-//    private Button main_button_logout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView text_username = (TextView)super.findViewById(R.id.login_text_username);
         final TextView text_password = (TextView)super.findViewById(R.id.login_text_password);
         Button button_login = (Button)super.findViewById(R.id.login_buttion_login);
-
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,11 +42,24 @@ public class MainActivity extends AppCompatActivity {
                     showMainPage();
                 }
                 else if (resp.equals("###USER_LOGIN_FAILED###")){
-                    popAlert("user login failed");
+                    popAlert("user login failed\nwrong password\nclick anywhere to sign up!");
                     showSignupPage();
                 }
             }
         });
+
+
+        Button button_register = (Button)super.findViewById(R.id.sign_up_button);
+        button_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // starting process on-click
+                showSignupPage();
+            }
+        });
+
+
+
     }
 
 
@@ -61,20 +68,46 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.sign_up);
         final TextView text_username = (TextView)super.findViewById(R.id.signup_text_username);
         final TextView text_password = (TextView)super.findViewById(R.id.signup_text_password);
-        Button button_login = (Button)super.findViewById(R.id.signup_test_button);
+        final TextView text_first_name = (TextView)super.findViewById(R.id.signup_text_first_name);
+        final TextView text_last_name = (TextView)super.findViewById(R.id.signup_text_last_name);
+        final TextView text_email = (TextView)super.findViewById(R.id.signup_text_email);
+        final TextView text_dob = (TextView)super.findViewById(R.id.signup_text_dob);
 
-        button_login.setOnClickListener(new View.OnClickListener() {
+        Button button_go_back = (Button)super.findViewById(R.id.goback_test_button);
+
+        button_go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // starting process on-click
-                String resp = signupHttpSend(text_username, text_password);
+                showLoginPage();
+            }
+        });
+
+
+        Button button_signup = (Button)super.findViewById(R.id.signup_test_button);
+
+        button_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // starting process on-click
+                String resp = signupHttpSend(text_username, text_password, text_first_name,
+                                            text_last_name, text_email , text_dob);
                 // test flask's response
                 if (resp.equals("###USER_REG_SUCCESS###")){
                     popAlert("user register success");
                     showLoginPage();
                 }
-                else if (resp.equals("###USER_REG_FAILED###")){
-                    popAlert("user register failed");
+                else if (resp.equals("###NON_VALID_EMAIL###")){
+                    popAlert("User register failed.\nNon valid email.\nTry again.");
+                    showSignupPage();
+                }
+                else if (resp.equals("###USER_REG_FAILED_2###")){
+                    popAlert("User register failed.\nPlease fulfill your username, password and email.\nTry again.");
+                    showSignupPage();
+                }
+
+                else if(resp.equals("###USER_REG_FAILED###")){
+                    popAlert("User register failed.\nUser name already in use.\nTry again.");
                     showSignupPage();
                 }
             }
@@ -97,8 +130,13 @@ public class MainActivity extends AppCompatActivity {
         return login_http.send();
     }
 
-    private String signupHttpSend(TextView text_username, TextView text_password){
-        SignupHttp signupHttp = new SignupHttp(text_username.getText().toString(), text_password.getText().toString());
+    private String signupHttpSend(TextView text_username, TextView text_password ,
+                                  TextView text_first_name, TextView text_last_name,
+                                  TextView text_email, TextView text_dob){
+        SignupHttp signupHttp = new SignupHttp(text_username.getText().toString(), text_password.getText().toString(),
+                                                text_first_name.getText().toString(),
+                                                text_last_name.getText().toString(),
+                                                text_email.getText().toString(), text_dob.getText().toString());
         return signupHttp.send();
     }
 
