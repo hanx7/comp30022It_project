@@ -48,20 +48,20 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/homeButton"
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:background="#AED581"
         android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
-        app:layout_constraintStart_toEndOf="@+id/button15"
+        app:layout_constraintEnd_toStartOf="@+id/logoutButton"
+        app:layout_constraintStart_toEndOf="@+id/previousButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.968" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/previousButton"
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -74,7 +74,7 @@
         app:layout_constraintVertical_bias="0.968" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/logoutButton"
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:layout_marginEnd="24dp"
