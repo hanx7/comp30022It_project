@@ -1,7 +1,0 @@
-#Tue Sep 10 11:35:50 AEST 2019
-base.0=/Users/hanxiao/Desktop/IT_project/comp30022It_project/mem_app 2/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
-path.1=classes.dex
-renamed.1=classes2.dex
-path.0=classes.dex
-renamed.0=classes.dex
-base.1=/Users/hanxiao/Desktop/IT_project/comp30022It_project/mem_app 2/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
