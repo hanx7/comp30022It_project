@@ -123,7 +123,50 @@ public class MainActivity extends AppCompatActivity {
                 showLoginPage();
             }
         });
+
+        Button categoryButton = (Button)super.findViewById(R.id.categoryButton);
+        categoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCategoryPage();
+            }
+        });
+
     }
+
+    private void showCategoryPage(){
+        setContentView(R.layout.category);
+
+        Button previousButton = (Button)super.findViewById(R.id.previousButton);
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMainPage();
+            }
+        });
+
+        Button logoutButton = (Button)super.findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLoginPage();
+            }
+        });
+
+        Button homeButton = (Button)super.findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMainPage();
+            }
+        });
+    }
+
+
+
+
+
+
 
     private String loginHttpSend(TextView text_username, TextView text_password){
         LoginHttp login_http = new LoginHttp(text_username.getText().toString(), text_password.getText().toString());
