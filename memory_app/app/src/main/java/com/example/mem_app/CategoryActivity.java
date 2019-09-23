@@ -5,12 +5,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ViewSingleItemActivity extends AppCompatActivity {
+public class CategoryActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Show login page
-        setContentView(R.layout.viewitem);
+        setContentView(R.layout.category);
         Intent intent = getIntent();
 
     }

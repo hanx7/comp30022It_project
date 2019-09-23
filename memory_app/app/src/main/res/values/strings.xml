@@ -25,4 +25,5 @@
     <string name="Itemid">Itemid</string>
     <string name="description">Description</string>
     <string name="create_new">Create New</string>
+    <string name="add_item">add item</string>
 </resources>

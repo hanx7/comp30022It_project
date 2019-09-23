@@ -1,4 +1,17 @@
 package com.example.mem_app;
 
-public class ViewAllItemsActivity {
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ViewAllItemsActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Show login page
+        setContentView(R.layout.view_item2);
+        Intent intent = getIntent();
+
+    }
 }

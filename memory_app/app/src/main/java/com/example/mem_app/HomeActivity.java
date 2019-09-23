@@ -25,4 +25,32 @@ public class HomeActivity extends AppCompatActivity{
         Intent intent = getIntent();
 
     }
+
+    public void onCategoryButtonClick(View view) {
+        Intent i = new Intent(this, CategoryActivity.class);
+        startActivity(i);
+    }
+
+    public void onViewAllItemsButtonClick(View view) {
+        Intent i = new Intent(this, ViewAllItemsActivity.class);
+        startActivity(i);
+    }
+
+
+    public void onUserInformationButtonClick(View view) {
+        Intent i = new Intent(this, UserInformationActivity.class);
+        startActivity(i);
+    }
+
+    public void onLogoutButtonClick(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+
+    public void onAddItemButtonClick(View view) {
+        Intent i = new Intent(this, AddItemActivity.class);
+        startActivity(i);
+    }
+
+
 }

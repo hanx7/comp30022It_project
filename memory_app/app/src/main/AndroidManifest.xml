@@ -17,6 +17,7 @@
         <activity android:name=".UserInformationActivity" />
         <activity android:name=".ViewAllItemsActivity" />
         <activity android:name=".ViewSingleItemActivity" />
+        <activity android:name=".CategoryActivity" />
         <activity android:name=".MainActivity">
 
             <intent-filter>
