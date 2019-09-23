@@ -41,17 +41,17 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         } else if (resp.equals("###NON_VALID_EMAIL###")) {
-            popAlert("User register failed.\nNon valid email.\nTry again.");
+            popAlert("Non valid email.\nTry again.");
             Intent i = new Intent(this, SignUpActivity.class);
             startActivity(i);
 
         } else if (resp.equals("###USER_REG_FAILED_2###")) {
-            popAlert("User register failed.\nPlease fulfill your username, password and email.\nTry again.");
+            popAlert("Please fulfill your username, password and email.\nTry again.");
             Intent i = new Intent(this, SignUpActivity.class);
             startActivity(i);
 
         } else if (resp.equals("###USER_REG_FAILED###")) {
-            popAlert("User register failed.\nUser name already in use.\nTry again.");
+            popAlert("User name already in use.\nTry again.");
             Intent i = new Intent(this, SignUpActivity.class);
             startActivity(i);
 
@@ -60,8 +60,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void popAlert(String text){
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setPositiveButton("ok",null);
             AlertDialog ad = alertDialogBuilder.create();
             ad.setMessage(text);
+            //alertDialogBuilder.setPositiveButton("ok",null);
             ad.show();
     }
 }
