@@ -13,6 +13,8 @@
         android:layout_height="55dp"
         android:background="#AED581"
         android:text="@string/home"
+        android:textColor="#F9F9F9"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logoutButton"
         app:layout_constraintStart_toEndOf="@+id/previousButton"
@@ -26,6 +28,8 @@
         android:layout_marginStart="24dp"
         android:background="#F0FC8B8B"
         android:text="@string/previous"
+        android:textColor="#F9F9F9"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,21 +44,73 @@
         android:layout_marginEnd="24dp"
         android:background="#F0FC8B8B"
         android:text="@string/logout"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F9F9F9"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.968" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="231dp"
-        android:layout_height="58dp"
+
+    <Button
+        android:id="@+id/Upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="88dp"
-        android:text="@string/create_new"
-        android:textSize="40sp"
-        android:textColor="#D850BBF1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Upload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="215dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="44dp"
+        android:background="#FFB74D"
+        android:text="ADD"
+        app:layout_constraintBottom_toTopOf="@+id/homeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="292dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="@string/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Upload" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="292dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="258dp"
+        android:layout_height="215dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/ic_menu_gallery"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

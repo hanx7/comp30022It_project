@@ -12,8 +12,8 @@ public class Http extends Thread{
     private final String HOST_URL;
 
     public Http(){
-        IP_ADDRESS = "127.0.0.1";
-        PORT_NUM = 27017;
+        IP_ADDRESS = "10.0.2.2";
+        PORT_NUM = 7777;
         HOST_URL = "http://" + IP_ADDRESS + ":" + PORT_NUM;
     }
 
