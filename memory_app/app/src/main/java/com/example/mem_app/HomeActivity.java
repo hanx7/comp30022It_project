@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void onLogoutButtonClick(View view) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
     }
 

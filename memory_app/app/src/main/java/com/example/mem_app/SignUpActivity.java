@@ -18,7 +18,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onGoBackButtonClick(View view) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
     }
 
@@ -36,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
         // test flask's response
         if (resp.equals("###USER_REG_SUCCESS###")) {
             popAlert("user register success");
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
 
 
