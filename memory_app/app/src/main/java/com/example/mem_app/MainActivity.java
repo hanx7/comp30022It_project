@@ -57,9 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 showSignupPage();
             }
         });
-
-
-
     }
 
 
@@ -132,6 +129,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button userInfoButton = (Button)super.findViewById(R.id.myInfoButton);
+        userInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showUserInfoPage();
+            }
+        });
+
     }
 
     private void showCategoryPage(){
@@ -189,4 +194,33 @@ public class MainActivity extends AppCompatActivity {
         ad.setMessage(text);
         ad.show();
     }
+
+    // Method to show user information page
+    public void showUserInfoPage(){
+        setContentView(R.layout.user_info);
+
+
+
+        Button myInfoLogOutButton = (Button)super.findViewById(R.id.logoutButton);
+        myInfoLogOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLoginPage();
+            }
+        });
+
+        Button myInfoMainButton = (Button)super.findViewById(R.id.homeButton);
+        myInfoMainButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMainPage();
+            }
+        });
+
+
+
+    }
+
+
+
 }
