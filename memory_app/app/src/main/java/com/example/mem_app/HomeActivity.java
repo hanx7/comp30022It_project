@@ -20,7 +20,7 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Show login page
+        // Show main page
         setContentView(R.layout.main);
         Intent intent = getIntent();
 

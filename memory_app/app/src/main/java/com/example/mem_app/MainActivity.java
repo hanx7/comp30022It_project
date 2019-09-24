@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static Processor processor = new Processor();
     public static Context context;
+    public static TextView text_username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onLoginButtonClick(View view) {
-        final TextView text_username = (TextView) super.findViewById(R.id.login_text_username);
+        text_username = (TextView) super.findViewById(R.id.login_text_username);
         final TextView text_password = (TextView) super.findViewById(R.id.login_text_password);
 
         // starting process on-click
