@@ -9,7 +9,7 @@ public class AddItemHttp extends Http {
     private String response;
     private String username;
 
-    public AddItemHttp(String item_name, String description,String username) {
+    public AddItemHttp(String item_name, String description, String username) {
         super();
         this.item_name = item_name;
         //this.image_view = image_view;
@@ -32,7 +32,7 @@ public class AddItemHttp extends Http {
 
     public void run(){
         // child thread
-        String url = "/Upload?" + "user_name=" + username + "&item_name=" + item_name
+        String url = "/upload?" + "user_name=" + username + "&item_name=" + item_name
                       + "&description=" + description;
         this.response = getHttp(url);
     }

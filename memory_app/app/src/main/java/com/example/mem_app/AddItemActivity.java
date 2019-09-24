@@ -1,5 +1,6 @@
 package com.example.mem_app;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,6 +20,7 @@ import java.io.IOException;
 public class AddItemActivity extends AppCompatActivity{
 
     private ImageView item_image;
+    public static Context context;
 
 
     @Override
@@ -27,6 +29,7 @@ public class AddItemActivity extends AppCompatActivity{
         // Show add_item page
         setContentView(R.layout.add_item);
         Intent intent = getIntent();
+        context = getApplicationContext();
     }
 
     public void onAddButtonClick(View view){
@@ -35,8 +38,37 @@ public class AddItemActivity extends AppCompatActivity{
         final TextView text_description = (TextView) super.findViewById(R.id.Description);
 
         String resp = MainActivity.processor.addItemHttpSend(text_item_name,text_description,text_username);
-        Intent i = new Intent(this, HomeActivity.class);
-        startActivity(i);
+        if (resp.equals("###ADD_ITEM_SUCCESS###")) {
+            final CharSequence[] options = { "OK" };
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddItemActivity.this);
+            builder.setTitle("Success!");
+            builder.setItems(options, new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int item) {
+                    if (options[item].equals("OK")) {
+                        dialog.dismiss();
+                        Intent i = new Intent(context, HomeActivity.class);
+                        startActivity(i);
+                    }
+                }
+            });
+            builder.show();
+        }
+        else if (resp.equals("###ADD_ITEM_FAILED###")){
+            final CharSequence[] options = { "Cancel" };
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddItemActivity.this);
+            builder.setTitle("Failure!");
+            builder.setItems(options, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int item) {
+                    if (options[item].equals("Cancel")) {
+                        dialog.dismiss();
+                    }
+                }
+            });
+            builder.show();
+        }
 
     }
     public void onLogoutButtonClick(View view) {

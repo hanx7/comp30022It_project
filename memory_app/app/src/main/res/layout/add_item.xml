@@ -100,7 +100,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="45dp"
         android:ems="10"
-        android:hint="@string/itemname"
+        android:hint="@string/fillItemName"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
