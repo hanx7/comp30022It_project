@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.app.AlertDialog;
 import android.widget.ImageView;
@@ -14,12 +15,15 @@ import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 
 public class AddItemActivity extends AppCompatActivity{
 
     private ImageView item_image;
+    private String image_string;
     public static Context context;
 
 
@@ -36,8 +40,9 @@ public class AddItemActivity extends AppCompatActivity{
         final TextView text_username = (TextView) MainActivity.text_username;
         final TextView text_item_name = (TextView) super.findViewById(R.id.ItemName);
         final TextView text_description = (TextView) super.findViewById(R.id.Description);
+        final String text_image_string = image_string;
 
-        String resp = MainActivity.processor.addItemHttpSend(text_item_name,text_description,text_username);
+        String resp = MainActivity.processor.addItemHttpSend(text_item_name,text_description,text_image_string,text_username);
         if (resp.equals("###ADD_ITEM_SUCCESS###")) {
             final CharSequence[] options = { "OK" };
             AlertDialog.Builder builder = new AlertDialog.Builder(AddItemActivity.this);
@@ -113,13 +118,21 @@ public class AddItemActivity extends AppCompatActivity{
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
-
+                BitMapToString(bitmap);
                 item_image= findViewById(R.id.ImageView);
                 item_image.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public String BitMapToString(Bitmap userImage1) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        userImage1.compress(Bitmap.CompressFormat.PNG, 60, baos);
+        byte[] b = baos.toByteArray();
+        image_string = Base64.encodeToString(b, Base64.DEFAULT);
+        return image_string;
     }
 
 

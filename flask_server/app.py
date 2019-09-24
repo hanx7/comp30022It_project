@@ -26,6 +26,7 @@ USER_EMAIL = "user_email"
 USER_DOB = "user_dob"
 ITEM_NAME = "item_name"
 DESCRIPTION = "description"
+IMAGE_STRING = "image_string"
 
 # return values
 USER_LOGIN_SUCCESS = "###USER_LOGIN_SUCCESS###"
@@ -75,9 +76,9 @@ def dbCheckUserExistence(db, user_name):
     return False
 
 
-def dbInertItem(db, user_name, item_name, description):
+def dbInertItem(db, user_name, item_name, image_string, description):
     table = db[ITEM_TABLE]
-    new_entry = {USER_NAME: user_name, USER_TABLE: item_name, DESCRIPTION: description}
+    new_entry = {USER_NAME: user_name, USER_TABLE: item_name, DESCRIPTION: description, IMAGE_STRING: image_string}
 
     print(table.insert_one(new_entry))
 
@@ -138,11 +139,10 @@ def register():
 
 @app.route('/upload', methods=["GET"])
 def upload():
-    user_name = request.args.get(USER_NAME)
     item_name = request.args.get(ITEM_NAME)
-    description = request.args.get(DESCRIPTION)
+    image_string = request.args.get(IMAGE_STRING)
 
-    if item_name == "":
+    if (item_name == "") or (image_string == "null"):
         return ADD_ITEM_FAILED
     else:
         return ADD_ITEM_SUCCESS

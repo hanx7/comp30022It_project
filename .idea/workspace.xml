@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="670579eb-2b1b-4a1d-8dba-574cd166a102" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/comp30022It_projec_master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/comp30022It_projec_master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask_server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/AddItemActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/AddItemActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/HttpReqs/AddItemHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/HttpReqs/AddItemHttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/Processor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568685133875</updated>
       <workItem from="1569304960257" duration="135000" />
+      <workItem from="1569306524168" duration="1637000" />
     </task>
     <servers />
   </component>
@@ -75,13 +77,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/comp30022It_project$Flask__flask_server_app_py_.coverage" NAME="Flask (flask_server/app.py) Coverage Results" MODIFIED="1569305096876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/comp30022It_project$Flask__flask_server_app_py_.coverage" NAME="Flask (flask_server/app.py) Coverage Results" MODIFIED="1569308637022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

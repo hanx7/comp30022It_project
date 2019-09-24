@@ -26,10 +26,10 @@ public class Processor {
         return signupHttp.send();
     }
 
-    public String addItemHttpSend(TextView text_item_name, TextView text_description,TextView text_username){
+    public String addItemHttpSend(TextView text_item_name, TextView text_description,String text_image_string,TextView text_username){
 
         AddItemHttp addItemHttp = new AddItemHttp(text_item_name.getText().toString(),
-                text_description.getText().toString(),text_username.getText().toString());
+                text_description.getText().toString(),text_image_string,text_username.getText().toString());
         return addItemHttp.send();
     }
 
