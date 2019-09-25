@@ -39,4 +39,5 @@ public class Processor {
     public HashMap<String, String[]> fetchItems(String username){
         return new viewItemHttp(username).send();
     }
+
 }

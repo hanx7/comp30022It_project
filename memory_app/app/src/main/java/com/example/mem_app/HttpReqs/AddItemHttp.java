@@ -1,5 +1,7 @@
 package com.example.mem_app.HttpReqs;
 
+import android.util.Log;
+
 import com.example.mem_app.Utils.Http;
 
 public class AddItemHttp extends Http {
@@ -35,6 +37,7 @@ public class AddItemHttp extends Http {
         // child thread
         String url = "/upload?" + "user_name=" + username + "&item_name=" + item_name
                       + "&description=" + description + "&image_string=" + image_string;
+        Log.v("image instered is ", image_string);
         this.response = getHttp(url);
     }
 

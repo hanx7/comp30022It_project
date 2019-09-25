@@ -25,7 +25,7 @@ public class AddItemActivity extends AppCompatActivity{
     private ImageView item_image;
     private String image_string;
     public static Context context;
-
+    public static String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +118,7 @@ public class AddItemActivity extends AppCompatActivity{
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
-                BitMapToString(bitmap);
+                image_string = BitMapToString(bitmap);
                 item_image= findViewById(R.id.ImageView);
                 item_image.setImageBitmap(bitmap);
             } catch (IOException e) {
@@ -132,6 +132,7 @@ public class AddItemActivity extends AppCompatActivity{
         userImage1.compress(Bitmap.CompressFormat.PNG, 60, baos);
         byte[] b = baos.toByteArray();
         image_string = Base64.encodeToString(b, Base64.DEFAULT);
+        test = image_string;
         return image_string;
     }
 

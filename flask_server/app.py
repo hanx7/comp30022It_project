@@ -144,6 +144,8 @@ def upload():
     image_string = request.args.get(IMAGE_STRING)
     description = request.args.get(DESCRIPTION)
     dbInsertItem(mongo_db, user_name, item_name, image_string, description)
+    print("image inserted is ")
+    print(image_string)
     if (item_name == "") or (image_string == "null"):
         return ADD_ITEM_FAILED
     else:
@@ -164,7 +166,7 @@ def getItems():
         my_str += item[DESCRIPTION]
         image_dict[str(i)] = my_str
         i += 1
-        print(item[DESCRIPTION])
+        #print(item[DESCRIPTION])
     return jsonify(image_dict)
 
 if __name__ == "__main__":
