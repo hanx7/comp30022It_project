@@ -10,7 +10,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Show login page
-        setContentView(R.layout.view_item2);
+        setContentView(R.layout.viewitem);
         Intent intent = getIntent();
 
     }
