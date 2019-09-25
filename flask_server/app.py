@@ -76,7 +76,7 @@ def dbCheckUserExistence(db, user_name):
     return False
 
 
-def dbInertItem(db, user_name, item_name, image_string, description):
+def dbInsertItem(db, user_name, item_name, image_string, description):
     table = db[ITEM_TABLE]
     new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string}
 
@@ -85,6 +85,7 @@ def dbInertItem(db, user_name, item_name, image_string, description):
 
 def dbCheckUserLogin(db, user_name, user_pwd):
     table = db[USER_TABLE]
+    print(table)
     table_entries = list(table.find())
     for entry in table_entries:
         entry_user_name = entry[USER_NAME]
@@ -144,7 +145,7 @@ def upload():
     image_string = request.args.get(IMAGE_STRING)
     description = request.args.get(DESCRIPTION)
 
-    dbInertItem(mongo_db, user_name, item_name, image_string, description)
+    dbInsertItem(mongo_db, user_name, item_name, image_string, description)
 
     if (item_name == "") or (image_string == "null"):
         return ADD_ITEM_FAILED
