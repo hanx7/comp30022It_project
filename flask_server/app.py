@@ -13,9 +13,10 @@ regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
 # database connectivity
 DB_URL = "mongodb://localhost:27017/"
 DB_NAME = "mem_db"
+
 # database tables
 USER_TABLE = "user"
-ITEM_TABLE = "items"
+ITEM_TABLE = "item"
 
 # constants
 USER_NAME = "user_name"
@@ -79,13 +80,11 @@ def dbCheckUserExistence(db, user_name):
 def dbInsertItem(db, user_name, item_name, image_string, description):
     table = db[ITEM_TABLE]
     new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string}
-
     print(table.insert_one(new_entry))
 
 
 def dbCheckUserLogin(db, user_name, user_pwd):
     table = db[USER_TABLE]
-    print(table)
     table_entries = list(table.find())
     for entry in table_entries:
         entry_user_name = entry[USER_NAME]
@@ -144,9 +143,7 @@ def upload():
     item_name = request.args.get(ITEM_NAME)
     image_string = request.args.get(IMAGE_STRING)
     description = request.args.get(DESCRIPTION)
-
     dbInsertItem(mongo_db, user_name, item_name, image_string, description)
-
     if (item_name == "") or (image_string == "null"):
         return ADD_ITEM_FAILED
     else:
