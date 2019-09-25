@@ -5,6 +5,9 @@ import android.widget.TextView;
 import com.example.mem_app.HttpReqs.AddItemHttp;
 import com.example.mem_app.HttpReqs.LoginHttp;
 import com.example.mem_app.HttpReqs.SignupHttp;
+import com.example.mem_app.HttpReqs.viewItemHttp;
+
+import java.util.HashMap;
 
 public class Processor {
 
@@ -33,5 +36,7 @@ public class Processor {
         return addItemHttp.send();
     }
 
-    
+    public HashMap<String, String[]> fetchItems(String username){
+        return new viewItemHttp(username).send();
+    }
 }

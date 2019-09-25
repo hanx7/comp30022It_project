@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request
 import pymongo as pm
 
@@ -149,6 +149,23 @@ def upload():
     else:
         return ADD_ITEM_SUCCESS
 
+@app.route('/getItems', methods=["GET"])
+def getItems():
+    i = 0
+    items = mongo_db[ITEM_TABLE]
+    item_dict = list(items.find())
+    image_dict = {}
+    for item in item_dict:
+        my_str = ""
+        my_str += item[ITEM_NAME]
+        my_str += ";"
+        my_str += item[IMAGE_STRING]
+        my_str += ";"
+        my_str += item[DESCRIPTION]
+        image_dict[str(i)] = my_str
+        i += 1
+        print(item[DESCRIPTION])
+    return jsonify(image_dict)
 
 if __name__ == "__main__":
     app.run()
