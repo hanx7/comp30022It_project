@@ -23,6 +23,9 @@ public class ViewSingleItemActivity extends AppCompatActivity {
 //        Intent intent = getIntent();
         // send GET http to server, e.g. image, desc, imane
 //        String item_ =
+
+
+
         String one_image_name = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[0];
         String one_image_str = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[1];
         String one_image_description = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[2];
