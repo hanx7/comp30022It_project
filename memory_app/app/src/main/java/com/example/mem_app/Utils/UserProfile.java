@@ -13,6 +13,8 @@ public class UserProfile {
     public static String user_name;
     public static String user_pwd;
     public static String user_email;
+    public static String firstName;
+    public static String lastName;
     private ArrayList<String> all_images;
     private LinkedHashMap<String, SingleItem> item_hmap;
     private ArrayList<SingleItem> items;

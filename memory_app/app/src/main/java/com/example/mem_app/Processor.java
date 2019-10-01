@@ -3,6 +3,7 @@ package com.example.mem_app;
 import android.widget.TextView;
 
 import com.example.mem_app.HttpReqs.AddItemHttp;
+import com.example.mem_app.HttpReqs.GetUserInfoHttp;
 import com.example.mem_app.HttpReqs.LoginHttp;
 import com.example.mem_app.HttpReqs.SignupHttp;
 import com.example.mem_app.HttpReqs.ViewItemHttp;
@@ -45,6 +46,11 @@ public class Processor {
 
         ViewItemHttp viewItemHttp = new ViewItemHttp(user_name,user_password);
         return viewItemHttp.send();
+    }
+
+    public String getUserInfoHttpSend(String user_name, String user_password) {
+        GetUserInfoHttp getUserInfoHttp = new GetUserInfoHttp(user_name,user_password);
+        return getUserInfoHttp.send();
     }
 
 }

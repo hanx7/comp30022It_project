@@ -30,6 +30,12 @@ public class LoginActivity extends AppCompatActivity {
                 popAlert("user login success");
                 MainActivity.user_profile.user_name = text_username.getText().toString();
                 MainActivity.user_profile.user_pwd = text_password.getText().toString();
+                String fullName = MainActivity.processor.getUserInfoHttpSend(
+                        MainActivity.user_profile.user_name,
+                        MainActivity.user_profile.user_pwd);
+
+                MainActivity.user_profile.firstName = fullName.split(" ")[0];
+                MainActivity.user_profile.lastName = fullName.split(" ")[1];
 
                 Intent i = new Intent(this, HomeActivity.class);
                 startActivity(i);

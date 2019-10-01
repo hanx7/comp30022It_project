@@ -206,5 +206,25 @@ def viewItem():
             res += IMAGE_SPLITOR
         return res
 
+
+@app.route('/get_user_info', methods=["GET"])
+def get_user_info():
+    user_name = request.args.get(USER_NAME)
+    user_password = request.args.get(USER_PWD)
+    table = mongo_db[USER_TABLE]
+    table_entries = list(table.find())
+
+    res = ""
+    if dbCheckUserLogin(mongo_db,user_name,user_password):
+        for entry in table_entries:
+            if entry[USER_NAME] == user_name and entry[USER_PWD] == user_password:
+
+                res += entry[USER_FIRST_NAME]
+                res += " "
+                res += entry[USER_LAST_NAME]
+
+        return res
+
+
 if __name__ == "__main__":
     app.run()
