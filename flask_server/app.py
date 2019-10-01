@@ -110,6 +110,18 @@ def check_email_valid(email):
         return 0
 
 
+def dbCheckItemExistence(db, user_name, item_name):
+    table = db[ITEM_TABLE]
+    table_entries = list(table.find())
+    for entry in table_entries:
+        entry_user_name = entry[USER_NAME]
+        entry_item_name = entry[ITEM_NAME]
+        # entry_user_pwd = entry[USER_PWD]
+        if entry_user_name == user_name and entry_item_name == item_name :
+            return True
+    return False
+
+
 
 ##### API Definitions #####
 ##### API Definitions #####
@@ -162,6 +174,8 @@ def upload():
         if (item_name == "") or (data == "null"):
             print("add failed")
             return ADD_ITEM_FAILED
+        if (dbCheckItemExistence(mongo_db,user_name,item_name)):
+            return ADD_ITEM_FAILED
         else:
             dbInsertItem(mongo_db, user_name, item_name, data, description)
             print("add success")
@@ -181,12 +195,13 @@ def viewItem():
     if dbCheckUserLogin(mongo_db,user_name,user_password):
          for entry in table_entries:
             res += entry[ITEM_NAME]
-            res+= INFO_SPLITOR
+            res += INFO_SPLITOR
             res += entry[IMAGE_STRING]
             res += INFO_SPLITOR
             res += entry[DESCRIPTION]
+            res += INFO_SPLITOR
+            res += entry[USER_NAME]
             res += IMAGE_SPLITOR
-         #print(res)
          return res
 
 if __name__ == "__main__":
