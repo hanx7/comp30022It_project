@@ -19,8 +19,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginButtonClick(View view) {
-        final TextView text_username = (TextView) super.findViewById(R.id.login_text_username);
-        final TextView text_password = (TextView) super.findViewById(R.id.login_text_password);
+        final TextView text_username = (TextView) super.findViewById(R.id.loginUsername);
+        final TextView text_password = (TextView) super.findViewById(R.id.loginPassword);
 
         // starting process on-click
         String resp = MainActivity.processor.loginHttpSend(text_username, text_password);

@@ -6,11 +6,24 @@
     <string name="allItems">All Items</string>
     <string name="timeline">Timeline</string>
     <string name="menu"> <u>Menu</u></string>
-    <string name="textview">TextView</string>
 
     <string name="items">Items</string>
     <string name="button">Button</string>
     <string name="home">home</string>
+    <string name="Search">Search</string>
+
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="signup">SignUp</string>
+    <string name="first_name">First Name</string>
+    <string name="username">Username*</string>
+    <string name="last_name">Last Name</string>
+    <string name="dob">Date Of Birth</string>
+    <string name="email">E-mail*</string>
+    <string name="date_format">(DD/MM/YY)</string>
+    <string name="go_back">Go Back</string>
+    <string name="password_required">Password*</string>
 
     <string name="category2">category2</string>
     <string name="category1">Category1</string>

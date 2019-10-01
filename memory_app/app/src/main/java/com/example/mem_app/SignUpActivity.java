@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.content.Context;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,12 +22,12 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onSignUpButtonClick(View view) {
-        final TextView text_username = (TextView) super.findViewById(R.id.signup_text_username);
-        final TextView text_password = (TextView) super.findViewById(R.id.signup_text_password);
-        final TextView text_first_name = (TextView) super.findViewById(R.id.signup_text_first_name);
-        final TextView text_last_name = (TextView) super.findViewById(R.id.signup_text_last_name);
-        final TextView text_email = (TextView) super.findViewById(R.id.signup_text_email);
-        final TextView text_dob = (TextView) super.findViewById(R.id.signup_text_dob);
+        final TextView text_username = (TextView) super.findViewById(R.id.signupUsername);
+        final TextView text_password = (TextView) super.findViewById(R.id.signupPassword);
+        final TextView text_first_name = (TextView) super.findViewById(R.id.signupFirstName);
+        final TextView text_last_name = (TextView) super.findViewById(R.id.signupLastName);
+        final TextView text_email = (TextView) super.findViewById(R.id.signupEmail);
+        final TextView text_dob = (TextView) super.findViewById(R.id.signupDOB);
 
         String resp = MainActivity.processor.signupHttpSend(text_username, text_password,
                 text_first_name, text_last_name, text_email, text_dob);

@@ -14,18 +14,9 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
-import android.util.Base64;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import java.lang.String;
-import java.util.HashMap;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.HashMap;
 
 import com.example.mem_app.Utils.SingleItem;
 
@@ -60,10 +51,10 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         SingleItem singleItem = MainActivity.user_profile.item_hmap.get(MainActivity.user_profile.items.get(0).item_name);
         String one_image_str = singleItem.image_string;
 
-        final ImageView image_1 = (ImageView) super.findViewById(R.id.image1);
+        final ImageView image_1 = (ImageView) super.findViewById(R.id.viewitemImage1);
         image_1.setImageBitmap(StringToBitMap(one_image_str));
 
-        final TextView upload_username_1 = (TextView) super.findViewById(R.id.upload_user_name);
+        final TextView upload_username_1 = (TextView) super.findViewById(R.id.viewitemUsername1);
         upload_username_1.setText(singleItem.upload_username);
 
 

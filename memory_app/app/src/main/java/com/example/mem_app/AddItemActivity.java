@@ -37,8 +37,8 @@ public class AddItemActivity extends AppCompatActivity{
     }
 
     public void onAddButtonClick(View view){
-        final TextView text_item_name = (TextView) super.findViewById(R.id.ItemName);
-        final TextView text_description = (TextView) super.findViewById(R.id.Description);
+        final TextView text_item_name = (TextView) super.findViewById(R.id.addItemName);
+        final TextView text_description = (TextView) super.findViewById(R.id.addItemDescription);
         final String text_image_string = image_string;
         final String user_name = MainActivity.user_profile.user_name;
         final String user_pwd = MainActivity.user_profile.user_pwd;
@@ -128,7 +128,7 @@ public class AddItemActivity extends AppCompatActivity{
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
                 BitMapToString(bitmap);
-                item_image= findViewById(R.id.ImageView);
+                item_image= findViewById(R.id.addItemImage);
                 item_image.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();

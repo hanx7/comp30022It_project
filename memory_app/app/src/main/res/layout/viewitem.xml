@@ -9,33 +9,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/upload_user_name4"
-        android:layout_width="140dp"
-        android:layout_height="41dp"
-        android:text="username"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
-
-    <TextView
-        android:id="@+id/upload_user_name3"
-        android:layout_width="140dp"
-        android:layout_height="41dp"
-        android:text="username"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
-
-    <TextView
-        android:id="@+id/upload_user_name2"
+        android:id="@+id/viewitemUsername4"
         android:layout_width="140dp"
         android:layout_height="41dp"
         android:text="username"
@@ -45,10 +19,10 @@
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.817" />
 
     <TextView
-        android:id="@+id/upload_user_name"
+        android:id="@+id/viewitemUsername3"
         android:layout_width="140dp"
         android:layout_height="41dp"
         android:text="username"
@@ -58,14 +32,40 @@
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.818" />
+
+    <TextView
+        android:id="@+id/viewitemUsername2"
+        android:layout_width="140dp"
+        android:layout_height="41dp"
+        android:text="username"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <TextView
+        android:id="@+id/viewitemUsername1"
+        android:layout_width="140dp"
+        android:layout_height="41dp"
+        android:text="username"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
 
     <ImageView
-        android:id="@+id/image5"
+        android:id="@+id/viewitemImage2"
         android:layout_width="141dp"
         android:layout_height="176dp"
         android:layout_marginStart="232dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="152dp"
         android:clickable="false"
         android:contentDescription="TODO"
         android:onClick="onImgButton1Click"
@@ -75,7 +75,7 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageView
-        android:id="@+id/image4"
+        android:id="@+id/viewitemImage4"
         android:layout_width="141dp"
         android:layout_height="176dp"
         android:layout_marginStart="232dp"
@@ -89,7 +89,7 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageView
-        android:id="@+id/image3"
+        android:id="@+id/viewitemImage3"
         android:layout_width="141dp"
         android:layout_height="176dp"
         android:layout_marginStart="36dp"
@@ -103,11 +103,11 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageView
-        android:id="@+id/image1"
+        android:id="@+id/viewitemImage1"
         android:layout_width="141dp"
         android:layout_height="176dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="152dp"
         android:clickable="false"
         android:contentDescription="TODO"
         android:onClick="onImgButton1Click"
@@ -117,7 +117,7 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/viewitemTextItem"
         android:layout_width="159dp"
         android:layout_height="80dp"
         android:text="@string/items"
@@ -144,18 +144,19 @@
         app:layout_constraintVertical_bias="0.968" />
 
     <EditText
-        android:id="@+id/search_item"
+        android:id="@+id/viewitemSearch"
         android:layout_width="173dp"
         android:layout_height="60dp"
         android:layout_marginTop="150dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="624dp"
         android:ems="10"
-        android:hint="Search"
+        android:hint="@string/Search"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
     <!--    <ImageView-->
 <!--        android:id="@+id/item_image"-->
