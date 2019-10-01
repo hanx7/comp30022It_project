@@ -3,17 +3,22 @@ package com.example.mem_app.Utils;
 import com.example.mem_app.MainActivity;
 
 public class SingleItem {
-    public String item_name;
-    public String image_string;
-    public String item_description;
-    public String upload_username;
+    private String item_name;
+    private String image_string;
+    private String item_description;
+    private String upload_username;
 
 
-
-    public void setItem_attributes(String item_name, String image_string, String item_description,String upload_username) {
+    public SingleItem(String item_name, String image_string, String item_description,String upload_username) {
         this.item_name = item_name;
         this.image_string = image_string;
         this.item_description = item_description;
         this.upload_username = upload_username;
     }
+
+    public String getItem_name(){return this.item_name;}
+    public String getImage_string(){return this.image_string;}
+    public String getItem_description(){return this.item_description;}
+    public String getUpload_username(){return this.upload_username;}
+
 }

@@ -193,7 +193,9 @@ def viewItem():
 
     res = ""
     if dbCheckUserLogin(mongo_db,user_name,user_password):
-         for entry in table_entries:
+        for entry in table_entries:
+            print("debug")
+            print(entry[ITEM_NAME])
             res += entry[ITEM_NAME]
             res += INFO_SPLITOR
             res += entry[IMAGE_STRING]
@@ -202,7 +204,7 @@ def viewItem():
             res += INFO_SPLITOR
             res += entry[USER_NAME]
             res += IMAGE_SPLITOR
-         return res
+        return res
 
 if __name__ == "__main__":
     app.run()

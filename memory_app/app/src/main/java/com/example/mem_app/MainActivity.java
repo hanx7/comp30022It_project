@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public static Processor processor = new Processor();
     public static Context context;
 
-    public static UserProfile user_profile;
+    public static UserProfile user_profile = new UserProfile();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

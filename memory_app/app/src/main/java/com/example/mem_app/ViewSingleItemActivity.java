@@ -26,18 +26,18 @@ public class ViewSingleItemActivity extends AppCompatActivity {
 
 
 
-        String one_image_name = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[0];
-        String one_image_str = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[1];
-        String one_image_description = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[2];
-
-        final TextView viewpage_item_name = (TextView) super.findViewById(R.id.viewpage_item_name);
-        viewpage_item_name.setText(one_image_name);
-
-        final TextView viewpage_item_description = (TextView) super.findViewById(R.id.viewpage_item_description);
-        viewpage_item_description.setText(one_image_description);
-
-        final ImageView item_image = (ImageView) super.findViewById(R.id.item_image);
-        item_image.setImageBitmap(StringToBitMap(one_image_str));
+////        String one_image_name = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[0];
+////        String one_image_str = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[1];
+////        String one_image_description = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[2];
+//
+//        final TextView viewpage_item_name = (TextView) super.findViewById(R.id.viewpage_item_name);
+//        viewpage_item_name.setText(one_image_name);
+//
+//        final TextView viewpage_item_description = (TextView) super.findViewById(R.id.viewpage_item_description);
+//        viewpage_item_description.setText(one_image_description);
+//
+//        final ImageView item_image = (ImageView) super.findViewById(R.id.item_image);
+//        item_image.setImageBitmap(StringToBitMap(one_image_str));
     }
 
 
