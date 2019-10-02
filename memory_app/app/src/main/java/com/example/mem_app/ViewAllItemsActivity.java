@@ -61,15 +61,15 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         }
         if(numOfItem >= 2){
             String imageString2 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
-            image1.setImageBitmap(StringToBitMap(imageString2));
+            image2.setImageBitmap(StringToBitMap(imageString2));
         }
         if(numOfItem >= 3){
             String imageString3 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
-            image1.setImageBitmap(StringToBitMap(imageString3));
+            image3.setImageBitmap(StringToBitMap(imageString3));
         }
         if(numOfItem >= 4){
             String imageString4 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
-            image1.setImageBitmap(StringToBitMap(imageString4));
+            image4.setImageBitmap(StringToBitMap(imageString4));
         }
     }
 
@@ -79,7 +79,6 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     public void onImgButton1Click(View view){
         Intent i = new Intent(this, ViewSingleItemActivity.class);
         startActivity(i);
-
     }
 
 
