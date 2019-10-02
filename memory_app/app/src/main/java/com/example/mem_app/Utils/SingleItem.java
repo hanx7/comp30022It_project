@@ -7,13 +7,14 @@ public class SingleItem {
     private String image_string;
     private String item_description;
     private String upload_username;
+    private String itemID;
 
-
-    public SingleItem(String item_name, String image_string, String item_description,String upload_username) {
+    public SingleItem(String item_name, String image_string, String item_description,String upload_username, String itemID) {
         this.item_name = item_name;
         this.image_string = image_string;
         this.item_description = item_description;
         this.upload_username = upload_username;
+        this.itemID = itemID;
     }
 
     public String getItem_name(){return this.item_name;}

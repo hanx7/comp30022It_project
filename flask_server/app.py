@@ -51,6 +51,8 @@ CHARSET_ENCODE = "utf-8"
 IMAGE_SPLITOR = "%%IMAGE_SPLITOR%%"
 INFO_SPLITOR = "%%INFO_SPLITOR%%"
 
+# itemID
+ITEM_ID = 0
 
 app = Flask(__name__)
 
@@ -203,7 +205,10 @@ def viewItem():
             res += entry[DESCRIPTION]
             res += INFO_SPLITOR
             res += entry[USER_NAME]
+            res += INFO_SPLITOR
+            res += str(ITEM_ID)
             res += IMAGE_SPLITOR
+            ITEM_ID = ITEM_ID + 1;
         return res
 
 

@@ -33,20 +33,20 @@ public class UserProfile {
                 all_images.add(image);
         }
     }
-    public void transfer_hmap(){
-
-        for(String item: all_images){
-
-            SingleItem singleItem = new SingleItem(item.split("%%INFO_SPLITOR%%")[0] ,
-                               item.split("%%INFO_SPLITOR%%")[1] ,
-                               item.split("%%INFO_SPLITOR%%")[2] ,
-                               item.split("%%INFO_SPLITOR%%")[3]);
-
-            items.add(singleItem);
-
-            item_hmap.put(singleItem.getItem_name(), singleItem);
-        }
-    }
+//    public void transfer_hmap(){
+//
+//        for(String item: all_images){
+//
+//            SingleItem singleItem = new SingleItem(item.split("%%INFO_SPLITOR%%")[0] ,
+//                               item.split("%%INFO_SPLITOR%%")[1] ,
+//                               item.split("%%INFO_SPLITOR%%")[2] ,
+//                               item.split("%%INFO_SPLITOR%%")[3]);
+//
+//            items.add(singleItem);
+//
+//            item_hmap.put(singleItem.getItem_name(), singleItem);
+//        }
+//    }
 
     public  HashMap<String, SingleItem> getItemHmap() {
         String resp = MainActivity.processor.viewItemHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);
@@ -54,14 +54,15 @@ public class UserProfile {
 
         for(String item: all_items){
 
-            String [] item_elements = item.split("%%INFO_SPLITOR%%");
-            String item_name = item_elements[0];
-            String item_image = item_elements[1];
-            String description = item_elements[2];
-            String userName = item_elements[3];
-            Log.d("debug-item", item_name);
-            SingleItem singleItem = new SingleItem(item_name, item_image, description, userName);
-            item_hmap.put(item_name, singleItem);
+            String [] itemElements = item.split("%%INFO_SPLITOR%%");
+            String itemName = itemElements[0];
+            String itemImage = itemElements[1];
+            String description = itemElements[2];
+            String userName = itemElements[3];
+            String itemID = itemElements[4];
+            Log.d("debug-item", itemName);
+            SingleItem singleItem = new SingleItem(itemName, itemImage, description, userName, itemID);
+            item_hmap.put(itemID, singleItem);
         }
         return item_hmap;
     }

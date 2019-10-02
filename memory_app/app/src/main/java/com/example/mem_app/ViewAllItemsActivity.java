@@ -82,6 +82,22 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     }
 
 
+    public void onImgButton2Click(View view){
+        Intent i = new Intent(this, ViewSingleItemActivity.class);
+        startActivity(i);
+    }
+
+    public void onImgButton3Click(View view){
+        Intent i = new Intent(this, ViewSingleItemActivity.class);
+        startActivity(i);
+    }
+
+    public void onImgButton4Click(View view){
+        Intent i = new Intent(this, ViewSingleItemActivity.class);
+        startActivity(i);
+    }
+
+
     private Bitmap StringToBitMap(String encodedString){
         try{
             byte [] encodeByte = Base64.decode(encodedString,Base64.DEFAULT);
