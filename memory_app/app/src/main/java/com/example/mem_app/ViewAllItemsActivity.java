@@ -32,6 +32,10 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     TextView userName2;
     TextView userName3;
     TextView userName4;
+    SingleItem item1;
+    SingleItem item2;
+    SingleItem item3;
+    SingleItem item4;
     int numOfItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,27 +58,31 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     private void init(){
         numOfItem = items.size();
         if(numOfItem >= 1){
-            String imageString1 = (new ArrayList<SingleItem>(items.values())).get(0).getImage_string();
+            item1 = (new ArrayList<SingleItem>(items.values())).get(0);
+            String imageString1 = item1.getImage_string();
             image1.setImageBitmap(StringToBitMap(imageString1));
-            String userName = (new ArrayList<SingleItem>(items.values())).get(0).getItem_name();
+            String userName = item1.getItem_name();
             userName1.setText(userName);
         }
         if(numOfItem >= 2){
-            String imageString2 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
+            item2 = (new ArrayList<SingleItem>(items.values())).get(1);
+            String imageString2 = item2.getImage_string();
             image2.setImageBitmap(StringToBitMap(imageString2));
-            String userName = (new ArrayList<SingleItem>(items.values())).get(1).getItem_name();
+            String userName = item2.getItem_name();
             userName2.setText(userName);
         }
         if(numOfItem >= 3){
-            String imageString3 = (new ArrayList<SingleItem>(items.values())).get(2).getImage_string();
+            item3 = (new ArrayList<SingleItem>(items.values())).get(2);
+            String imageString3 = item3.getImage_string();
             image3.setImageBitmap(StringToBitMap(imageString3));
-            String userName = (new ArrayList<SingleItem>(items.values())).get(2).getItem_name();
+            String userName = item3.getItem_name();
             userName3.setText(userName);
         }
         if(numOfItem >= 4){
-            String imageString4 = (new ArrayList<SingleItem>(items.values())).get(3).getImage_string();
+            item4 = (new ArrayList<SingleItem>(items.values())).get(3);
+            String imageString4 = item3.getImage_string();
             image4.setImageBitmap(StringToBitMap(imageString4));
-            String userName = (new ArrayList<SingleItem>(items.values())).get(3).getItem_name();
+            String userName = item3.getItem_name();
             userName4.setText(userName);
         }
     }
@@ -84,22 +92,26 @@ public class ViewAllItemsActivity extends AppCompatActivity {
 
     public void onImgButton1Click(View view){
         Intent i = new Intent(this, ViewSingleItemActivity.class);
+        i.putExtra("itemID", item1.getItemID());
         startActivity(i);
     }
 
 
     public void onImgButton2Click(View view){
         Intent i = new Intent(this, ViewSingleItemActivity.class);
+        i.putExtra("itemID", item2.getItemID());
         startActivity(i);
     }
 
     public void onImgButton3Click(View view){
         Intent i = new Intent(this, ViewSingleItemActivity.class);
+        i.putExtra("itemID", item3.getItemID());
         startActivity(i);
     }
 
     public void onImgButton4Click(View view){
         Intent i = new Intent(this, ViewSingleItemActivity.class);
+        i.putExtra("itemID", item4.getItemID());
         startActivity(i);
     }
 

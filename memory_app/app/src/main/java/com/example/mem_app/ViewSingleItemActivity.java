@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,32 +13,28 @@ import java.lang.String;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mem_app.Utils.SingleItem;
 import com.example.mem_app.Utils.UserProfile;
 
 public class ViewSingleItemActivity extends AppCompatActivity {
+
+    ImageView itemImage;
+    TextView itemName;
+    TextView itemDescription;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Show login page
-        setContentView(R.layout.view_single_item);
-//        Intent intent = getIntent();
-        // send GET http to server, e.g. image, desc, imane
-//        String item_ =
-
-
-
-////        String one_image_name = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[0];
-////        String one_image_str = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[1];
-////        String one_image_description = MainActivity.user_profile.all_images.get(0).split("%%INFO_SPLITOR%%")[2];
-//
-//        final TextView viewpage_item_name = (TextView) super.findViewById(R.id.viewpage_item_name);
-//        viewpage_item_name.setText(one_image_name);
-//
-//        final TextView viewpage_item_description = (TextView) super.findViewById(R.id.viewpage_item_description);
-//        viewpage_item_description.setText(one_image_description);
-//
-//        final ImageView item_image = (ImageView) super.findViewById(R.id.item_image);
-//        item_image.setImageBitmap(StringToBitMap(one_image_str));
+        setContentView(R.layout.item_info);
+        itemImage = (ImageView)findViewById(R.id.itemInfoImage);
+        itemName = (TextView)findViewById(R.id.itemInfoName);
+        itemDescription = (TextView)findViewById(R.id.itemInfodecription);
+        String itemID = getIntent().getExtras().getString("itemID");
+        SingleItem item = MainActivity.user_profile.getItems().get(itemID);
+        itemImage.setImageBitmap(StringToBitMap(item.getImage_string()));
+        itemName.setText(item.getItem_name());
+        itemDescription.setText(item.getItem_description());
     }
 
 

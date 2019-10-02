@@ -67,8 +67,9 @@ public class UserProfile {
         return item_hmap;
     }
 
-    public  ArrayList<SingleItem> getItems() {
-        return items;
-    }
+    public HashMap<String, SingleItem> getItems(){ return item_hmap;}
+//    public  ArrayList<SingleItem> getItems() {
+//        return items;
+//    }
 
 }

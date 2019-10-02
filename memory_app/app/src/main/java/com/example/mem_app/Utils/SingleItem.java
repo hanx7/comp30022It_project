@@ -21,5 +21,5 @@ public class SingleItem {
     public String getImage_string(){return this.image_string;}
     public String getItem_description(){return this.item_description;}
     public String getUpload_username(){return this.upload_username;}
-
+    public String getItemID(){ return this.itemID;}
 }
