@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB74D"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/eventCategoryGoBack"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="349dp"
+        android:background="?attr/homeAsUpIndicator"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:shadowColor="#B82D32"
+        android:text=" Event name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemInfoName4" />
+
+    <Button
+        android:id="@+id/button28"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:shadowColor="#B82D32"
+        android:text=" Event name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button24" />
+
+    <Button
+        android:id="@+id/button31"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:shadowColor="#B82D32"
+        android:text=" Event name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button29" />
+
+    <Button
+        android:id="@+id/button24"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:shadowColor="#B82D32"
+        android:text=" Event name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button29"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:shadowColor="#B82D32"
+        android:text=" Event name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button28" />
+
+    <Button
+        android:id="@+id/button32"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:shadowColor="#B82D32"
+        android:text=" Event name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button31" />
+
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/ic_chevron_left_24px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button34"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button32" />
+
+    <Button
+        android:id="@+id/button34"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/ic_chevron_right_24px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button33"
+        app:layout_constraintTop_toBottomOf="@+id/button32" />
+
+    <TextView
+        android:id="@+id/itemInfoName4"
+        android:layout_width="330dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="21dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Item_name"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryGoBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
