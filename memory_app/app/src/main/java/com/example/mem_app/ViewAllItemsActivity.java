@@ -28,6 +28,10 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     ImageView image2;
     ImageView image3;
     ImageView image4;
+    TextView userName1;
+    TextView userName2;
+    TextView userName3;
+    TextView userName4;
     int numOfItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +43,12 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         image2 = (ImageView)findViewById(R.id.viewitemImage2);
         image3 = (ImageView)findViewById(R.id.viewitemImage3);
         image4 = (ImageView)findViewById(R.id.viewitemImage4);
+        userName1 = (TextView)findViewById(R.id.viewitemUsername1);
+        userName2 = (TextView)findViewById(R.id.viewitemUsername2);
+        userName3 = (TextView)findViewById(R.id.viewitemUsername3);
+        userName4 = (TextView)findViewById(R.id.viewitemUsername4);
         items = MainActivity.user_profile.getItemHmap();
         init();
-//        SingleItem singleItem = MainActivity.user_profile.item_hmap.get(MainActivity.user_profile.items.get(0).item_name);
-//        String one_image_str = singleItem.image_string;
-//
-//
-//
-//        final ImageView image_1 = (ImageView) super.findViewById(R.id.viewitemImage1);
-//        image_1.setImageBitmap(StringToBitMap(one_image_str));
-//
-//        final TextView upload_username_1 = (TextView) super.findViewById(R.id.viewitemUsername1);
-//        upload_username_1.setText(singleItem.upload_username);
     }
 
     private void init(){
@@ -58,18 +56,26 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         if(numOfItem >= 1){
             String imageString1 = (new ArrayList<SingleItem>(items.values())).get(0).getImage_string();
             image1.setImageBitmap(StringToBitMap(imageString1));
+            String userName = (new ArrayList<SingleItem>(items.values())).get(0).getItem_name();
+            userName1.setText(userName);
         }
         if(numOfItem >= 2){
             String imageString2 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
             image2.setImageBitmap(StringToBitMap(imageString2));
+            String userName = (new ArrayList<SingleItem>(items.values())).get(1).getItem_name();
+            userName2.setText(userName);
         }
         if(numOfItem >= 3){
-            String imageString3 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
+            String imageString3 = (new ArrayList<SingleItem>(items.values())).get(2).getImage_string();
             image3.setImageBitmap(StringToBitMap(imageString3));
+            String userName = (new ArrayList<SingleItem>(items.values())).get(2).getItem_name();
+            userName3.setText(userName);
         }
         if(numOfItem >= 4){
-            String imageString4 = (new ArrayList<SingleItem>(items.values())).get(1).getImage_string();
+            String imageString4 = (new ArrayList<SingleItem>(items.values())).get(3).getImage_string();
             image4.setImageBitmap(StringToBitMap(imageString4));
+            String userName = (new ArrayList<SingleItem>(items.values())).get(3).getItem_name();
+            userName4.setText(userName);
         }
     }
 
