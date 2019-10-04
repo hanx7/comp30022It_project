@@ -50,19 +50,21 @@ public class UserProfile {
 
     public  HashMap<String, SingleItem> getItemHmap() {
         String resp = MainActivity.processor.viewItemHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);
-        String all_items[] = resp.split("%%IMAGE_SPLITOR%%");
+        if (!resp.equals("")) {
+            String all_items[] = resp.split("%%IMAGE_SPLITOR%%");
 
-        for(String item: all_items){
+            for (String item : all_items) {
 
-            String [] itemElements = item.split("%%INFO_SPLITOR%%");
-            String itemName = itemElements[0];
-            String itemImage = itemElements[1];
-            String description = itemElements[2];
-            String userName = itemElements[3];
-            String itemID = itemElements[4];
-            Log.d("debug-item", itemName);
-            SingleItem singleItem = new SingleItem(itemName, itemImage, description, userName, itemID);
-            item_hmap.put(itemID, singleItem);
+                String[] itemElements = item.split("%%INFO_SPLITOR%%");
+                String itemName = itemElements[0];
+                String itemImage = itemElements[1];
+                String description = itemElements[2];
+                String userName = itemElements[3];
+                String itemID = itemElements[4];
+                Log.d("debug-item", itemName);
+                SingleItem singleItem = new SingleItem(itemName, itemImage, description, userName, itemID);
+                item_hmap.put(itemID, singleItem);
+            }
         }
         return item_hmap;
     }

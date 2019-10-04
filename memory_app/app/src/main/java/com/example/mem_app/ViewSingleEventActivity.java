@@ -8,7 +8,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.example.mem_app.Utils.Event;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mem_app.Utils.SingleItem;
@@ -29,12 +29,14 @@ public class ViewSingleEventActivity extends AppCompatActivity {
         eventName = (TextView)findViewById(R.id.eventName);
         eventStory = (TextView)findViewById(R.id.eventStory);
 
-        String itemID = getIntent().getExtras().getString("itemID");
-        SingleItem item = MainActivity.user_profile.getItems().get(itemID);
-
-        eventImage.setImageBitmap(StringToBitMap(item.getImage_string()));
-        eventName.setText(item.getItem_name());
-        eventStory.setText(item.getItem_description());
+        String eventIdentifier = getIntent().getExtras().getString("eventName");
+        String itemID = ViewSingleItemActivity.currentItemID;
+        Event event = MainActivity.user_profile.getItemHmap().get(itemID).getEventHmap().get(eventIdentifier);
+        String imageString = event.getEventImage();
+        Bitmap temp = StringToBitMap(event.getEventImage());
+        eventImage.setImageBitmap(StringToBitMap(event.getEventImage()));
+        eventName.setText(event.getEventTitle());
+        eventStory.setText(event.getEventContent());
     }
 
     private Bitmap StringToBitMap(String encodedString){

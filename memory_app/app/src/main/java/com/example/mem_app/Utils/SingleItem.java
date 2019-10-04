@@ -34,27 +34,28 @@ public class SingleItem {
 
     public HashMap<String, Event> getEventHmap() {
         String resp = MainActivity.processor.viewEventHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);
+        if (!resp.equals("")) {
+            String events[] = resp.split("%%IMAGE_SPLITOR%%");
 
-        String events[] = resp.split("%%IMAGE_SPLITOR%%");
+            for (String eventString : events) {
 
-        for(String eventString: events){
+                String[] eventElements = eventString.split("%%INFO_SPLITOR%%");
 
-            String[] eventElements = eventString.split("%%INFO_SPLITOR%%");
+                String eventTitle = eventElements[0];
+                String eventImage = eventElements[1];
+                String eventTime = eventElements[2];
+                String eventContent = eventElements[3];
+                String itemName = eventElements[4];
+                String itemID = eventElements[5];
 
-            String eventTitle = eventElements[0];
-            String eventImage = eventElements[1];
-            String eventTime = eventElements[2];
-            String eventContent = eventElements[3];
-            String itemName = eventElements[4];
-            String itemID = eventElements[5];
+                //            Log.d("debug-item", itemName);
 
-//            Log.d("debug-item", itemName);
-
-            Event event = new Event(eventTitle, eventImage, eventTime, eventContent, itemName, itemID);
-            eventHmap.put(itemID, event);
+                Event event = new Event(eventTitle, eventContent, eventTime, eventImage, itemName, itemID);
+                eventHmap.put(eventTitle, event);
+            }
         }
         return eventHmap;
     }
 
-    public HashMap<String, Event> getItems(){ return eventHmap;}
+    public HashMap<String, Event> getEvents(){ return eventHmap;}
 }

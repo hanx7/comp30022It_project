@@ -93,38 +93,38 @@ public class EventCategoryActivity extends AppCompatActivity {
 
     public void oneventCategoryEvent1Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
-        i.putExtra("eventName", eventName1.toString());
+        i.putExtra("eventName", eventName1.getText().toString());
         startActivity(i);
     }
 
 
     public void oneventCategoryEvent2Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
-        i.putExtra("eventName", eventName2.toString());
+        i.putExtra("eventName", eventName2.getText().toString());
         startActivity(i);
     }
 
     public void oneventCategoryEvent3Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
-        i.putExtra("eventName", eventName3.toString());
+        i.putExtra("eventName", eventName3.getText().toString());
         startActivity(i);
     }
 
     public void oneventCategoryEvent4Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
-        i.putExtra("eventName", eventName4.toString());
+        i.putExtra("eventName", eventName4.getText().toString());
         startActivity(i);
     }
 
     public void oneventCategoryEvent5Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
-        i.putExtra("eventName", eventName5.toString());
+        i.putExtra("eventName", eventName5.getText().toString());
         startActivity(i);
     }
 
     public void oneventCategoryEvent6Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
-        i.putExtra("eventName", eventName6.toString());
+        i.putExtra("eventName", eventName6.getText().toString());
         startActivity(i);
     }
 }
