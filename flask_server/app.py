@@ -17,6 +17,7 @@ DB_NAME = "mem_db"
 # database tables
 USER_TABLE = "user"
 ITEM_TABLE = "items"
+EVENT_TABLE = "events"
 
 # constants
 USER_NAME = "user_name"
@@ -28,6 +29,10 @@ USER_DOB = "user_dob"
 ITEM_NAME = "item_name"
 DESCRIPTION = "description"
 IMAGE_STRING = "image_string"
+ITEM_ID = "item_ID"
+EVENT_TITLE = "event_title"
+EVENT_CONTENT = "event_content"
+EVENT_TIME = "event_time"
 
 # return values
 USER_LOGIN_SUCCESS = "###USER_LOGIN_SUCCESS###"
@@ -43,6 +48,8 @@ NON_VALID_EMAIL = "###NON_VALID_EMAIL###"
 
 ADD_ITEM_SUCCESS = "###ADD_ITEM_SUCCESS###"
 ADD_ITEM_FAILED = "###ADD_ITEM_FAILED###"
+ADD_EVENT_SUCCESS = "###ADD_EVENT_SUCCESS###"
+ADD_EVENT_FAILED = "###ADD_EVENT_FAILED###"
 
 # charset encoding
 CHARSET_ENCODE = "utf-8"
@@ -66,7 +73,7 @@ mongo_db_list = mongo_client.list_database_names()
 print(mongo_db_list)
 
 
-def dbInsertUser(db, user_name, user_pwd,first_name, last_name, email, dob):
+def dbInsertUser(db, user_name, user_pwd, first_name, last_name, email, dob):
     table = db[USER_TABLE]
     new_entry = {USER_NAME: user_name, USER_PWD: user_pwd ,USER_FIRST_NAME:first_name, USER_LAST_NAME :last_name,
         USER_EMAIL:email, USER_DOB:dob}
@@ -123,6 +130,12 @@ def dbCheckItemExistence(db, user_name, item_name):
             return True
     return False
 
+
+def dbInsertEvent(db, user_name, item_name, item_ID, event_title, event_content, event_time, image_string):
+    table = db[EVENT_TABLE]
+    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: item_ID, EVENT_TITLE: event_title,
+                 EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: image_string}
+    print(table.insert_one(new_entry))
 
 
 ##### API Definitions #####
@@ -186,6 +199,30 @@ def upload():
         return ADD_ITEM_FAILED
 
 
+@app.route('/addEvent', methods=["GET", "POST"])
+def addEvent():
+    user_name = request.args.get(USER_NAME)
+    user_pwd = request.args.get(USER_PWD)
+    item_name = request.args.get(ITEM_NAME)
+    item_ID = request.args.get(ITEM_ID)
+    event_title = request.args.get(EVENT_TITLE)
+    event_content = request.args.get(EVENT_CONTENT)
+    event_time = request.args.get(EVENT_TIME)
+    data = request.get_data().decode(CHARSET_ENCODE)
+    print(data)
+
+    if dbCheckUserLogin(mongo_db, user_name, user_pwd):
+        if (item_name == "") or (item_ID == "") or (event_title == "") or (event_time == "") or ((data == "null") and (event_content == "")):
+            print("add failed")
+            return ADD_EVENT_FAILED
+        else:
+            dbInsertEvent(mongo_db, user_name, item_name, item_ID, event_title, event_content, event_time, data)
+            print("add success")
+            return ADD_EVENT_SUCCESS
+    else:
+        return ADD_EVENT_FAILED
+
+
 @app.route('/viewItem', methods=["GET"])
 def viewItem():
     user_name = request.args.get(USER_NAME)
@@ -210,6 +247,33 @@ def viewItem():
             res += str(item_id)
             res += IMAGE_SPLITOR
             item_id += 1
+        return res
+
+
+@app.route('/viewEvent', methods=["GET"])
+def viewEvent():
+    user_name = request.args.get(USER_NAME)
+    user_password = request.args.get(USER_PWD)
+    table = mongo_db[EVENT_TABLE]
+    table_entries = list(table.find())
+
+    res = ""
+    if dbCheckUserLogin(mongo_db, user_name, user_password):
+        for entry in table_entries:
+            print("debug")
+            print(entry[EVENT_TITLE])
+            res += entry[EVENT_TITLE]
+            res += INFO_SPLITOR
+            res += entry[IMAGE_STRING]
+            res += INFO_SPLITOR
+            res += entry[EVENT_TIME]
+            res += INFO_SPLITOR
+            res += entry[EVENT_CONTENT]
+            res += INFO_SPLITOR
+            res += entry[ITEM_NAME]
+            res += INFO_SPLITOR
+            res += entry[ITEM_ID]
+            res += IMAGE_SPLITOR
         return res
 
 

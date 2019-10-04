@@ -40,4 +40,6 @@
     <string name="create_new">Create New</string>
     <string name="add_item">add item</string>
     <string name="fillItemName">Item Name*</string>
+    <string name="item_name">Item_name</string>
+    <string name="event_name">event_name</string>
 </resources>

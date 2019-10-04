@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void onCategoryButtonClick(View view) {
-        Intent i = new Intent(this, CategoryActivity.class);
+        Intent i = new Intent(this, EventCategoryActivity.class);
         startActivity(i);
     }
 

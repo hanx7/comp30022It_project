@@ -2,11 +2,15 @@ package com.example.mem_app;
 
 import android.widget.TextView;
 
+import com.example.mem_app.HttpReqs.AddEventHttp;
 import com.example.mem_app.HttpReqs.AddItemHttp;
 import com.example.mem_app.HttpReqs.GetUserInfoHttp;
 import com.example.mem_app.HttpReqs.LoginHttp;
 import com.example.mem_app.HttpReqs.SignupHttp;
+import com.example.mem_app.HttpReqs.ViewEventHttp;
 import com.example.mem_app.HttpReqs.ViewItemHttp;
+
+import java.util.Date;
 
 public class Processor {
 
@@ -48,9 +52,30 @@ public class Processor {
         return viewItemHttp.send();
     }
 
+    public String viewEventHttpSend(String user_name, String user_password){
+
+        ViewEventHttp viewEventHttp = new ViewEventHttp(user_name,user_password);
+        return viewEventHttp.send();
+    }
+
     public String getUserInfoHttpSend(String user_name, String user_password) {
         GetUserInfoHttp getUserInfoHttp = new GetUserInfoHttp(user_name,user_password);
         return getUserInfoHttp.send();
+    }
+
+    public String addEventHttpSend(String eventTitle, String eventContent, String eventTime,
+                                   String eventImage, String itemName, String itemID,
+                                   String username, String userPassword){
+
+        AddEventHttp addEventHttp = new AddEventHttp(eventTitle,
+                eventContent,
+                eventTime,
+                eventImage,
+                itemName,
+                itemID,
+                username,
+                userPassword);
+        return addEventHttp.send();
     }
 
 }

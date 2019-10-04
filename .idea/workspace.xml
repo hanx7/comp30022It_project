@@ -2,14 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="670579eb-2b1b-4a1d-8dba-574cd166a102" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/AddEventActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/EventCategoryActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/HttpReqs/AddEventHttp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memory_app/app/src/main/res/drawable/ic_add_24px.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/add_event.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/ViewSingleItemActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/java/com/example/mem_app/ViewSingleItemActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/event_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/event_category.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/item_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/item_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/viewitem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/memory_app/app/src/main/res/layout/viewitem.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,6 +90,8 @@
       <workItem from="1569306524168" duration="1896000" />
       <workItem from="1569373596589" duration="151000" />
       <workItem from="1569376330740" duration="388000" />
+      <workItem from="1569979197044" duration="504000" />
+      <workItem from="1569982116902" duration="555000" />
     </task>
     <servers />
   </component>
@@ -85,6 +112,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/comp30022It_project$Flask__flask_server_app_py_.coverage" NAME="Flask (flask_server/app.py) Coverage Results" MODIFIED="1569376497427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/comp30022It_project$Flask__flask_server_app_py_.coverage" NAME="Flask (flask_server/app.py) Coverage Results" MODIFIED="1569979798135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

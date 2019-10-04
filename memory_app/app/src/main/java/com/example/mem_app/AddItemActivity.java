@@ -105,7 +105,8 @@ public class AddItemActivity extends AppCompatActivity{
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Choose from Gallery"))
                 {
-                    Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    //Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
                 }
                 else if (options[item].equals("Cancel")) {

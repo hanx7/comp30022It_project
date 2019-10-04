@@ -23,121 +23,123 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/eventCategoryEvent1"
         android:layout_width="285dp"
         android:layout_height="71dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="90dp"
         android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent1Click"
         android:shadowColor="#B82D32"
-        android:text=" Event name"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemInfoName4" />
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryItemName" />
 
     <Button
-        android:id="@+id/button28"
-        android:layout_width="285dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="90dp"
-        android:background="@drawable/round_button"
-        android:shadowColor="#B82D32"
-        android:text=" Event name"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button24" />
-
-    <Button
-        android:id="@+id/button31"
-        android:layout_width="285dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="90dp"
-        android:background="@drawable/round_button"
-        android:shadowColor="#B82D32"
-        android:text=" Event name"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button29" />
-
-    <Button
-        android:id="@+id/button24"
+        android:id="@+id/eventCategoryEvent6"
         android:layout_width="285dp"
         android:layout_height="71dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="36dp"
         android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent6Click"
         android:shadowColor="#B82D32"
-        android:text=" Event name"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button29"
-        android:layout_width="285dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="36dp"
-        android:background="@drawable/round_button"
-        android:shadowColor="#B82D32"
-        android:text=" Event name"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button28" />
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent5" />
 
     <Button
-        android:id="@+id/button32"
+        android:id="@+id/eventCategoryEvent5"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent5Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent4" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent4"
         android:layout_width="285dp"
         android:layout_height="71dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="36dp"
         android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent4Click"
         android:shadowColor="#B82D32"
-        android:text=" Event name"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button31" />
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent3" />
 
     <Button
-        android:id="@+id/button33"
+        android:id="@+id/eventCategoryEvent2"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent2Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent1" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent3"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent3Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent2" />
+
+    <Button
+        android:id="@+id/eventCategoryLastPage"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="45dp"
         android:background="@drawable/ic_chevron_left_24px"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button34"
+        app:layout_constraintEnd_toStartOf="@+id/eventCategoryNextPage"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button32" />
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent6"
+        app:layout_constraintVertical_bias="0.545" />
 
     <Button
-        android:id="@+id/button34"
+        android:id="@+id/eventCategoryNextPage"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginTop="45dp"
@@ -146,23 +148,44 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button33"
-        app:layout_constraintTop_toBottomOf="@+id/button32" />
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryLastPage"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent6"
+        app:layout_constraintVertical_bias="0.545" />
 
     <TextView
-        android:id="@+id/itemInfoName4"
-        android:layout_width="330dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/eventCategoryItemName"
+        android:layout_width="211dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="21dp"
         android:fontFamily="@font/montserrat"
-        android:text="Item_name"
-        android:textAlignment="viewEnd"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toEndOf="@+id/eventCategoryGoBack"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/eventCategoryAddEvent"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_add_24px"
+        android:onClick="onGoToAddEventButtonClick"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryItemName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/eventCategoryAddEventHint"
+        android:layout_width="64dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="6dp"
+        android:text="add event"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryEvent1"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryAddEvent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
