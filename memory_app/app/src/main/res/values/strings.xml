@@ -42,4 +42,5 @@
     <string name="fillItemName">Item Name*</string>
     <string name="item_name">Item_name</string>
     <string name="event_name">event_name</string>
+    <string name="Main">Main</string>
 </resources>

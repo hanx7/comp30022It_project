@@ -16,7 +16,7 @@ public class UserProfile {
     public static String firstName;
     public static String lastName;
     private ArrayList<String> all_images;
-    private LinkedHashMap<String, SingleItem> item_hmap;
+    private HashMap<String, SingleItem> item_hmap;
     private ArrayList<SingleItem> items;
 
     public UserProfile(){
@@ -49,6 +49,7 @@ public class UserProfile {
 //    }
 
     public  HashMap<String, SingleItem> getItemHmap() {
+        item_hmap = new HashMap<>();
         String resp = MainActivity.processor.viewItemHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);
         if (!resp.equals("")) {
             String all_items[] = resp.split("%%IMAGE_SPLITOR%%");

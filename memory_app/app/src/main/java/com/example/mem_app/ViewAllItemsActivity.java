@@ -1,5 +1,6 @@
 package com.example.mem_app;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -37,6 +38,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
     SingleItem item3;
     SingleItem item4;
     int numOfItem;
+    int page = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -52,6 +54,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         userName3 = (TextView)findViewById(R.id.viewitemUsername3);
         userName4 = (TextView)findViewById(R.id.viewitemUsername4);
         items = MainActivity.user_profile.getItemHmap();
+        Log.v("here for debug", String.valueOf(MainActivity.user_profile.getItemHmap().size()));
         init();
     }
 
@@ -80,7 +83,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         }
         if(numOfItem >= 4){
             item4 = (new ArrayList<SingleItem>(items.values())).get(3);
-            String imageString4 = item3.getImage_string();
+            String imageString4 = item4.getImage_string();
             image4.setImageBitmap(StringToBitMap(imageString4));
             String userName = item3.getItem_name();
             userName4.setText(userName);
@@ -115,6 +118,65 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void onNextButtonClick(View view){
+        if(numOfItem > page*4){
+            int imageShown = 0;
+            if(numOfItem > page*4){
+                item1 = (new ArrayList<SingleItem>(items.values())).get(page*4);
+                String imageString1 = item1.getImage_string();
+                image1.setImageBitmap(StringToBitMap(imageString1));
+                String userName = item1.getItem_name();
+                userName1.setText(userName);
+                imageShown++;
+            }
+            if(numOfItem > page*4+1){
+                item2 = (new ArrayList<SingleItem>(items.values())).get(page*4+1);
+                String imageString1 = item2.getImage_string();
+                image2.setImageBitmap(StringToBitMap(imageString1));
+                String userName = item2.getItem_name();
+                userName2.setText(userName);
+                imageShown++;
+            }
+            if(numOfItem > page*4+2){
+                item3 = (new ArrayList<SingleItem>(items.values())).get(page*4+2);
+                String imageString1 = item3.getImage_string();
+                image3.setImageBitmap(StringToBitMap(imageString1));
+                String userName = item3.getItem_name();
+                userName3.setText(userName);
+                imageShown++;
+            }
+            if(numOfItem > page*4+3){
+                item4 = (new ArrayList<SingleItem>(items.values())).get(page*4+3);
+                String imageString1 = item4.getImage_string();
+                image4.setImageBitmap(StringToBitMap(imageString1));
+                String userName = item4.getItem_name();
+                userName4.setText(userName);
+                imageShown++;
+            }
+            if(imageShown == 3){
+                image4.setImageResource(R.mipmap.ic_launcher);
+                userName4.setText("");
+            }
+            if(imageShown == 2){
+                image4.setImageResource(R.mipmap.ic_launcher);
+                userName4.setText("");
+                image3.setImageResource(R.mipmap.ic_launcher);
+                userName3.setText("");
+            }
+            if(imageShown == 1){
+                image4.setImageResource(R.mipmap.ic_launcher);
+                userName4.setText("");
+                image3.setImageResource(R.mipmap.ic_launcher);
+                userName3.setText("");
+                image2.setImageResource(R.mipmap.ic_launcher);
+                userName2.setText("");
+            }
+            page++;
+        }else{
+            popAlert("No more items! ");
+        }
+
+    }
 
     private Bitmap StringToBitMap(String encodedString){
         try{
@@ -126,5 +188,17 @@ public class ViewAllItemsActivity extends AppCompatActivity {
             e.getMessage();
             return null;
         }
+    }
+
+    private void popAlert(String text){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        AlertDialog ad = alertDialogBuilder.create();
+        ad.setMessage(text);
+        ad.show();
+    }
+
+    public void onMainButtonClick(View view){
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
     }
 }
