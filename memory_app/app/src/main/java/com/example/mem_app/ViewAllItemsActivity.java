@@ -54,7 +54,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         userName3 = (TextView)findViewById(R.id.viewitemUsername3);
         userName4 = (TextView)findViewById(R.id.viewitemUsername4);
         items = MainActivity.user_profile.getItemHmap();
-        Log.v("here for debug", String.valueOf(MainActivity.user_profile.getItemHmap().size()));
+        //Log.v("here for debug", String.valueOf(MainActivity.user_profile.getItemHmap().size()));
         init();
     }
 
@@ -85,7 +85,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
             item4 = (new ArrayList<SingleItem>(items.values())).get(3);
             String imageString4 = item4.getImage_string();
             image4.setImageBitmap(StringToBitMap(imageString4));
-            String userName = item3.getItem_name();
+            String userName = item4.getItem_name();
             userName4.setText(userName);
         }
     }
@@ -116,6 +116,37 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         Intent i = new Intent(this, ViewSingleItemActivity.class);
         i.putExtra("itemID", item4.getItemID());
         startActivity(i);
+    }
+
+    public void onPreviousButtonClick(View view){
+        if(page > 1){
+            page--;
+            item1 = (new ArrayList<SingleItem>(items.values())).get((page - 1)*4);
+            String imageString1 = item1.getImage_string();
+            image1.setImageBitmap(StringToBitMap(imageString1));
+            String userName = item1.getItem_name();
+            userName1.setText(userName);
+
+            item2 = (new ArrayList<SingleItem>(items.values())).get((page - 1)*4+1);
+            imageString1 = item2.getImage_string();
+            image2.setImageBitmap(StringToBitMap(imageString1));
+            userName = item2.getItem_name();
+            userName2.setText(userName);
+
+            item3 = (new ArrayList<SingleItem>(items.values())).get((page - 1)*4+2);
+            imageString1 = item3.getImage_string();
+            image3.setImageBitmap(StringToBitMap(imageString1));
+            userName = item3.getItem_name();
+            userName3.setText(userName);
+
+            item4 = (new ArrayList<SingleItem>(items.values())).get((page - 1)*4+3);
+            imageString1 = item4.getImage_string();
+            image4.setImageBitmap(StringToBitMap(imageString1));
+            userName = item4.getItem_name();
+            userName4.setText(userName);
+        }else{
+            popAlert("No more items! ");
+        }
     }
 
     public void onNextButtonClick(View view){
