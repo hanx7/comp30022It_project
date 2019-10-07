@@ -17,10 +17,14 @@ import com.example.mem_app.Exceptions.*;
 import com.example.mem_app.HttpReqs.SignupHttp;
 public class HomeActivity extends AppCompatActivity{
 
+    public static AlertDialog alert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Show main page
+        alert = (new AlertDialog.Builder(this)).create();
+
         setContentView(R.layout.main);
         Intent intent = getIntent();
 
@@ -32,6 +36,10 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void onViewAllItemsButtonClick(View view) {
+        alert.setMessage("Loading Images");
+        alert.setCanceledOnTouchOutside(false);
+        alert.show();
+
         Intent i = new Intent(this, ViewAllItemsActivity.class);
         startActivity(i);
     }

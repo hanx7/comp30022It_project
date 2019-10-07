@@ -3,6 +3,7 @@ package com.example.mem_app;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -30,13 +31,14 @@ public class LoginActivity extends AppCompatActivity {
                 popAlert("user login success");
                 MainActivity.user_profile.user_name = text_username.getText().toString();
                 MainActivity.user_profile.user_pwd = text_password.getText().toString();
+
                 String fullName = MainActivity.processor.getUserInfoHttpSend(
                         MainActivity.user_profile.user_name,
                         MainActivity.user_profile.user_pwd);
 
-                MainActivity.user_profile.firstName = fullName.split(" ")[0];
-                MainActivity.user_profile.lastName = fullName.split(" ")[1];
-
+                // MainActivity.user_profile.firstName = fullName.split(" ")[0];
+                //MainActivity.user_profile.lastName = fullName.split(" ")[1];
+                Log.v("debug!!", "here");
                 Intent i = new Intent(this, HomeActivity.class);
                 startActivity(i);
             }

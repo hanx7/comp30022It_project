@@ -53,6 +53,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         userName4 = (TextView)findViewById(R.id.viewitemUsername4);
         items = MainActivity.user_profile.getItemHmap();
         init();
+
     }
 
     private void init(){
@@ -85,6 +86,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
             String userName = item3.getItem_name();
             userName4.setText(userName);
         }
+        HomeActivity.alert.dismiss();
     }
 
 
