@@ -4,6 +4,8 @@ import android.widget.TextView;
 
 import com.example.mem_app.HttpReqs.AddEventHttp;
 import com.example.mem_app.HttpReqs.AddItemHttp;
+import com.example.mem_app.HttpReqs.DeleteItemHttp;
+import com.example.mem_app.HttpReqs.EditItemHttp;
 import com.example.mem_app.HttpReqs.GetUserInfoHttp;
 import com.example.mem_app.HttpReqs.LoginHttp;
 import com.example.mem_app.HttpReqs.SignupHttp;
@@ -46,6 +48,23 @@ public class Processor {
         return addItemHttp.send();
     }
 
+
+    public String editItemHttpSend(  TextView text_item_name,
+                                    TextView text_description,
+                                    String image_string,
+                                    String user_name,
+                                    String user_pwd,
+                                    String item_ID){
+
+        EditItemHttp editItemHttp = new EditItemHttp(  text_item_name.getText().toString(),
+                text_description.getText().toString(),
+                image_string,
+                user_name,
+                user_pwd,
+                item_ID);
+        return editItemHttp.send();
+    }
+
     public String viewItemHttpSend(String user_name, String user_password){
 
         ViewItemHttp viewItemHttp = new ViewItemHttp(user_name,user_password);
@@ -78,4 +97,8 @@ public class Processor {
         return addEventHttp.send();
     }
 
+    public String deleteItemHttpSend(String text_username, String text_password, String item_ID){
+        DeleteItemHttp deleteItemHttp = new DeleteItemHttp(text_username, text_password,item_ID);
+        return deleteItemHttp.send();
+    }
 }
