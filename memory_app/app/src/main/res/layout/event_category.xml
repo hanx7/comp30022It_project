@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB74D"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/eventCategoryGoBack"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="349dp"
+        android:background="?attr/homeAsUpIndicator"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent1"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent1Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryItemName" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent6"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent6Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent5" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent5"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent5Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent4" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent4"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent4Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent3" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent2"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent2Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent1" />
+
+    <Button
+        android:id="@+id/eventCategoryEvent3"
+        android:layout_width="285dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/round_button"
+        android:onClick="oneventCategoryEvent3Click"
+        android:shadowColor="#B82D32"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent2" />
+
+    <Button
+        android:id="@+id/eventCategoryLastPage"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/ic_chevron_left_24px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/eventCategoryNextPage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent6"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <Button
+        android:id="@+id/eventCategoryNextPage"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/ic_chevron_right_24px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryLastPage"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent6"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <TextView
+        android:id="@+id/eventCategoryItemName"
+        android:layout_width="211dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="21dp"
+        android:fontFamily="@font/montserrat"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryGoBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/eventCategoryAddEvent"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_add_24px"
+        android:onClick="onGoToAddEventButtonClick"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryItemName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/eventCategoryAddEventHint"
+        android:layout_width="64dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="6dp"
+        android:text="add event"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryEvent1"
+        app:layout_constraintTop_toBottomOf="@+id/eventCategoryAddEvent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout11"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB74D"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/addEventAdd"
+        android:layout_width="215dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="16dp"
+        android:background="#5F5D5D"
+        android:onClick="onAddEventButtonClick"
+        android:text="ADD"
+        android:textColor="#FFB74D"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEventContent" />
+
+    <Button
+        android:id="@+id/addEventUpload"
+        android:layout_width="148dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="131dp"
+        android:background="#908C8C"
+        android:onClick="onUploadEventImageButtonClick"
+        android:text="Upload Item Image"
+        android:textColor="#FFFFFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEventImage" />
+
+    <EditText
+        android:id="@+id/addEventTitle"
+        android:layout_width="292dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Event Title*"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEventItemName" />
+
+    <EditText
+        android:id="@+id/addEventContent"
+        android:layout_width="292dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEventUpload" />
+
+    <ImageView
+        android:id="@+id/addEventImage"
+        android:layout_width="258dp"
+        android:layout_height="215dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="68dp"
+        android:background="@android:drawable/editbox_background"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEventTitle"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/addEventItemName"
+        android:layout_width="211dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/montserrat"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toEndOf="@+id/eventCategoryGoBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addEventDate"
+        android:layout_width="294dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="7dp"
+        android:ems="10"
+        android:hint="Event Time*"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEventTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

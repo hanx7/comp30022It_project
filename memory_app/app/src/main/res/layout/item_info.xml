@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_Info_Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB74D">
+
+    <Button
+        android:id="@+id/itemInfoGoBack"
+        android:layout_width="51dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="349dp"
+        android:background="?attr/actionModeCloseDrawable"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/itemInfoGoToEvent"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/ic_arrow_forward_24px"
+        android:onClick="onGoToEventButtonClick"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemInfoStory" />
+
+    <ImageView
+        android:id="@+id/itemInfoImage"
+        android:layout_width="332dp"
+        android:layout_height="285dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemInfoGoBack" />
+
+    <TextView
+        android:id="@+id/itemInfoName"
+        android:layout_width="367dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Item_name"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemInfoImage" />
+
+    <TextView
+        android:id="@+id/itemInfoStory"
+        android:layout_width="336dp"
+        android:layout_height="126dp"
+        android:fontFamily="@font/open_sans"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:text="@android:string/VideoView_error_text_invalid_progressive_playback"
+        android:textColor="#3C3A3A"
+        android:textSize="18sp"
+        android:typeface="normal"
+        android:verticalScrollbarPosition="right"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemInfoName" />
+
+    <TextView
+        android:id="@+id/itemInfoGoToEventHint"
+        android:layout_width="128dp"
+        android:layout_height="29dp"
+        android:text="Go To Events"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemInfoGoToEvent" />
+
+    <Button
+        android:id="@+id/itemInfoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="10dp"
+        android:onClick="onEditButtonClick"
+        android:text="Edit"
+        app:layout_constraintStart_toEndOf="@+id/itemInfoGoBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ItemInfoDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:onClick="onDeleteButtonClick"
+        android:text="Delete"
+        app:layout_constraintStart_toEndOf="@+id/itemInfoEdit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
