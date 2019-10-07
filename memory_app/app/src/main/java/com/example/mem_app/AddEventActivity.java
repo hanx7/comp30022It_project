@@ -143,7 +143,7 @@ public class AddEventActivity extends AppCompatActivity {
 
     public String BitMapToString(Bitmap userImage1) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        userImage1.compress(Bitmap.CompressFormat.PNG, 60, baos);
+        userImage1.compress(Bitmap.CompressFormat.JPEG, 60, baos);
         byte[] b = baos.toByteArray();
         imageString = Base64.encodeToString(b, Base64.DEFAULT);
         return imageString;

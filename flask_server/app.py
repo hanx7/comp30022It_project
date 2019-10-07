@@ -91,8 +91,11 @@ def dbCheckUserExistence(db, user_name):
     return False
 
 def dbInsertItem(db, user_name, item_name, image_string, description):
+    global item_id
     table = db[ITEM_TABLE]
-    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string}
+    item_id = item_id + 1
+    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string, ITEM_ID: item_id}
+    print("I am here")
     print(table.insert_one(new_entry))
 
 
@@ -232,7 +235,6 @@ def viewItem():
 
     res = ""
     if dbCheckUserLogin(mongo_db,user_name,user_password):
-        global item_id
         for entry in table_entries:
             print("debug")
             print(entry[ITEM_NAME])
@@ -244,9 +246,8 @@ def viewItem():
             res += INFO_SPLITOR
             res += entry[USER_NAME]
             res += INFO_SPLITOR
-            res += str(item_id)
+            res += str(entry[ITEM_ID])
             res += IMAGE_SPLITOR
-            item_id += 1
         return res
 
 
@@ -260,8 +261,8 @@ def viewEvent():
     res = ""
     if dbCheckUserLogin(mongo_db, user_name, user_password):
         for entry in table_entries:
-            print("debug")
-            print(entry[EVENT_TITLE])
+            #print("debug")
+            #print(entry[EVENT_TITLE])
             res += entry[EVENT_TITLE]
             res += INFO_SPLITOR
             res += entry[IMAGE_STRING]
