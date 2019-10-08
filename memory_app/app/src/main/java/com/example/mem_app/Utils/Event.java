@@ -8,14 +8,16 @@ public class Event {
     private String itemName;
     private String itemID;
     private String eventImage;
+    private String eventID;
 
-    public Event(String eventTitle, String eventContent, String eventTime, String eventImage, String itemName, String itemID){
+    public Event(String eventTitle, String eventContent, String eventTime, String eventImage, String itemName, String itemID, String eventID){
         this.eventContent = eventContent;
         this.eventTime = eventTime;
         this.eventTitle = eventTitle;
         this.eventImage = eventImage;
         this.itemName = itemName;
         this.itemID = itemID;
+        this.eventID = eventID;
     }
 
     public String getEventContent(){ return this.eventContent;}

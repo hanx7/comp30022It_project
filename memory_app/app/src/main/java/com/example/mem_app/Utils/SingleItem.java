@@ -33,7 +33,7 @@ public class SingleItem {
     public String getItemID(){ return this.itemID;}
 
     public HashMap<String, Event> getEventHmap() {
-        String resp = MainActivity.processor.viewEventHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);
+        String resp = MainActivity.processor.viewEventHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd, itemID);
         if (!resp.equals("")) {
             String events[] = resp.split("%%IMAGE_SPLITOR%%");
 
@@ -47,11 +47,11 @@ public class SingleItem {
                 String eventContent = eventElements[3];
                 String itemName = eventElements[4];
                 String itemID = eventElements[5];
-                String eventId = eventElements[6];
+                String eventID = eventElements[6];
 
                 //            Log.d("debug-item", itemName);
 
-                Event event = new Event(eventTitle, eventContent, eventTime, eventImage, itemName, itemID);
+                Event event = new Event(eventTitle, eventContent, eventTime, eventImage, itemName, itemID, eventID);
                 eventHmap.put(eventTitle, event);
             }
         }

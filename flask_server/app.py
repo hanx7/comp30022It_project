@@ -75,8 +75,8 @@ mongo_db = mongo_client[DB_NAME]
 mongo_db_list = mongo_client.list_database_names()
 print(mongo_db_list)
 # itemID
-item_id = len(list(mongo_db[ITEM_TABLE].find()))
-event_id = len(list(mongo_db[EVENT_TABLE].find()))
+global_item_id = len(list(mongo_db[ITEM_TABLE].find()))
+global_event_id = len(list(mongo_db[EVENT_TABLE].find()))
 
 def dbInsertUser(db, user_name, user_pwd, first_name, last_name, email, dob):
     table = db[USER_TABLE]
@@ -96,10 +96,10 @@ def dbCheckUserExistence(db, user_name):
     return False
 
 def dbInsertItem(db, user_name, item_name, image_string, description):
-    global item_id
+    global global_item_id
     table = db[ITEM_TABLE]
-    item_id = item_id + 1
-    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string, ITEM_ID: item_id}
+    global_item_id = global_item_id + 1
+    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string, ITEM_ID: global_item_id}
     print("I am here")
     print(table.insert_one(new_entry))
 
@@ -134,17 +134,17 @@ def dbCheckItemExistence(db, user_name, item_name):
         entry_user_name = entry[USER_NAME]
         entry_item_name = entry[ITEM_NAME]
         # entry_user_pwd = entry[USER_PWD]
-        if entry_user_name == user_name and entry_item_name == item_name :
+        if entry_user_name == user_name and entry_item_name == item_name:
             return True
     return False
 
 
-def dbInsertEvent(db, user_name, item_name, item_ID, event_title, event_content, event_time, image_string):
-    global event_id
-    event_id = event_id + 1;
+def dbInsertEvent(db, user_name, item_name, item_id, event_title, event_content, event_time, image_string):
+    global global_event_id
+    global_event_id = global_event_id + 1;
     table = db[EVENT_TABLE]
-    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: item_ID, EVENT_TITLE: event_title,
-                 EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: image_string, EVENT_ID: event_id}
+    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: int(item_id), EVENT_TITLE: event_title,
+                 EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: image_string, EVENT_ID: global_event_id}
     print(table.insert_one(new_entry))
 
 
@@ -268,6 +268,7 @@ def viewItem():
 def viewEvent():
     user_name = request.args.get(USER_NAME)
     user_password = request.args.get(USER_PWD)
+    item_id = request.args.get(ITEM_ID)
     table = mongo_db[EVENT_TABLE]
     table_entries = list(table.find())
 
@@ -276,20 +277,21 @@ def viewEvent():
         for entry in table_entries:
             #print("debug")
             #print(entry[EVENT_TITLE])
-            res += entry[EVENT_TITLE]
-            res += INFO_SPLITOR
-            res += entry[IMAGE_STRING]
-            res += INFO_SPLITOR
-            res += entry[EVENT_TIME]
-            res += INFO_SPLITOR
-            res += entry[EVENT_CONTENT]
-            res += INFO_SPLITOR
-            res += entry[ITEM_NAME]
-            res += INFO_SPLITOR
-            res += entry[ITEM_ID]
-            res += INFO_SPLITOR
-            res += str(entry[EVENT_ID])
-            res += IMAGE_SPLITOR
+            if entry[ITEM_ID] == int(item_id):
+                res += entry[EVENT_TITLE]
+                res += INFO_SPLITOR
+                res += entry[IMAGE_STRING]
+                res += INFO_SPLITOR
+                res += entry[EVENT_TIME]
+                res += INFO_SPLITOR
+                res += entry[EVENT_CONTENT]
+                res += INFO_SPLITOR
+                res += entry[ITEM_NAME]
+                res += INFO_SPLITOR
+                res += str(entry[ITEM_ID])
+                res += INFO_SPLITOR
+                res += str(entry[EVENT_ID])
+                res += IMAGE_SPLITOR
         return res
 
 

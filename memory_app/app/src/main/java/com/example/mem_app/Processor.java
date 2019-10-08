@@ -72,9 +72,9 @@ public class Processor {
         return viewItemHttp.send();
     }
 
-    public String viewEventHttpSend(String user_name, String user_password){
+    public String viewEventHttpSend(String user_name, String user_password, String item_ID){
 
-        ViewEventHttp viewEventHttp = new ViewEventHttp(user_name,user_password);
+        ViewEventHttp viewEventHttp = new ViewEventHttp(user_name,user_password, item_ID);
         return viewEventHttp.send();
     }
 

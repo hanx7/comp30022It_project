@@ -6,15 +6,16 @@ public class ViewEventHttp extends Http {
 
     private String user_name;
     private String user_password;
+    private String item_ID;
     private String response;
 
 
-    public ViewEventHttp(String user_name, String user_password){
+    public ViewEventHttp(String user_name, String user_password, String item_ID){
         super();
 
         this.user_name = user_name;
         this.user_password = user_password;
-
+        this.item_ID = item_ID;
         this.response = "";
     }
 
@@ -34,7 +35,8 @@ public class ViewEventHttp extends Http {
         // child thread
         String url = "/viewEvent?"
                 + "user_name=" + user_name
-                + "&user_pwd=" + user_password;
+                + "&user_pwd=" + user_password
+                + "&item_ID=" + item_ID;
         this.response = getHttp(url);
     }
 }
