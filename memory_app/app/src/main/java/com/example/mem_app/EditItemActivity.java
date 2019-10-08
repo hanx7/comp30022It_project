@@ -101,10 +101,11 @@ public class EditItemActivity extends AppCompatActivity{
         }
 
     }
-//    public void onCancelButtonClick(View view) {
-//        Intent i = new Intent(this, ViewSingleItemActivity.class);
-//        startActivity(i);
-//    }
+    public void onCancelButtonClick(View view) {
+        Intent i = new Intent(this, ViewSingleItemActivity.class);
+        i.putExtra("itemID", ViewSingleItemActivity.currentItemID);
+        startActivity(i);
+    }
 
 
     public void onEditImageButtonClick(View view) {
