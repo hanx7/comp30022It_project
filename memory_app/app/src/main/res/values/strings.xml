@@ -43,4 +43,6 @@
     <string name="item_name">Item_name</string>
     <string name="event_name">event_name</string>
     <string name="Main">Main</string>
+    <string name="edit_event_image">Edit Event Image</string>
+    <string name="edit">Edit</string>
 </resources>

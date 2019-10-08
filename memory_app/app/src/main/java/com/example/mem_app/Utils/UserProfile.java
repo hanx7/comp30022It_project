@@ -62,4 +62,12 @@ public class UserProfile {
 //        return items;
 //    }
 
+    public String getUserName() {
+        return user_name;
+    }
+
+    public String getUserPwd() {
+        return user_pwd;
+    }
+
 }

@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.example.mem_app.HttpReqs.AddEventHttp;
 import com.example.mem_app.HttpReqs.AddItemHttp;
 import com.example.mem_app.HttpReqs.DeleteItemHttp;
+import com.example.mem_app.HttpReqs.EditEventHttp;
 import com.example.mem_app.HttpReqs.EditItemHttp;
 import com.example.mem_app.HttpReqs.GetUserInfoHttp;
 import com.example.mem_app.HttpReqs.LoginHttp;
@@ -108,4 +109,28 @@ public class Processor {
         DeleteEventHttp deleteEventHttp = new DeleteEventHttp(text_username, text_password,item_ID, event_ID);
         return deleteEventHttp.send();
     }
+
+    public String editEventHttpSend(String image_string,
+                                    String username,
+                                    String password,
+                                    String item_ID,
+                                    String item_name,
+                                    String event_ID,
+                                    String event_title,
+                                    String event_content,
+                                    String event_date){
+
+        EditEventHttp editEventHttp = new EditEventHttp(image_string,
+                username,
+                password,
+                item_ID,
+                item_name,
+                event_ID,
+                event_title,
+                event_content,
+                event_date);
+        return editEventHttp.send();
+    }
+
+
 }

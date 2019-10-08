@@ -370,5 +370,35 @@ def delete_event():
         res += "###DELETE_EVENT_FAILED###"
         return res
 
+@app.route('/edit_event', methods=["GET", "POST"])
+def edit_event():
+    user_name = request.args.get(USER_NAME)
+    user_pwd = request.args.get(USER_PWD)
+    item_name = request.args.get(ITEM_NAME)
+    item_ID = request.args.get(ITEM_ID)
+    event_title = request.args.get(EVENT_TITLE)
+    event_content = request.args.get(EVENT_CONTENT)
+    event_time = request.args.get(EVENT_TIME)
+    data = request.get_data().decode(CHARSET_ENCODE)
+    event_id = request.args.get(EVENT_ID)
+
+    res = ""
+    table = mongo_db[EVENT_TABLE]
+    try:
+
+        table.delete_one({EVENT_ID: int(event_id)})
+
+        new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: int(item_ID), EVENT_TITLE: event_title,
+                     EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: data, EVENT_ID: global_event_id}
+        print(table.insert_one(new_entry))
+
+        res += "###EDIT_EVENT_SUCCESS###"
+        print("m1")
+        return res
+    except:
+        print("m2")
+        res += "###EDIT_EVENT_FAILED###"
+        return res
+
 if __name__ == "__main__":
     app.run()

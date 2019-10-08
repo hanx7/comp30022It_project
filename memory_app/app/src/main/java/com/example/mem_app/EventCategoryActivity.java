@@ -49,6 +49,8 @@ public class EventCategoryActivity extends AppCompatActivity {
         init();
     }
 
+
+
     private void init(){
         currentPage = 1;
         numOfEvents = events.size();

@@ -21,7 +21,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
     ImageView eventImage;
     TextView eventName;
     TextView eventStory;
-    private Event currentEvent;
+    public static Event currentEvent;
 
 
     @Override
@@ -73,7 +73,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
 
     // Go to EditEventButtonActivity
     public void onEditButtonClick(View view) {
-        Intent i = new Intent(this, EditItemActivity.class);
+        Intent i = new Intent(this, EditEventActivity.class);
         startActivity(i);
     }
 
