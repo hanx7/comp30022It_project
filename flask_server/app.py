@@ -247,8 +247,6 @@ def viewItem():
     res = ""
     if dbCheckUserLogin(mongo_db,user_name,user_password):
         for entry in table_entries:
-            print("debug")
-            print(entry[ITEM_NAME])
             res += entry[ITEM_NAME]
             res += INFO_SPLITOR
             res += entry[IMAGE_STRING]
@@ -307,6 +305,22 @@ def get_user_info():
 
         return res
 
+@app.route('/delete_item', methods=["GET"])
+def delete_item():
+    user_name = request.args.get(USER_NAME)
+    user_passsword = request.args.get(USER_PWD)
+    i_id = request.args.get(ITEM_ID)
+    table = mongo_db[ITEM_TABLE]
+    res = ""
+    try:
+
+        table.delete_one({ITEM_ID: int(i_id)})
+        print("delete success")
+        res += "###DELETE_ITEM_SUCCESS###"
+        return res
+    except:
+        res += "###DELETE_ITEM_FAILED###"
+        return res
 
 if __name__ == "__main__":
     app.run()

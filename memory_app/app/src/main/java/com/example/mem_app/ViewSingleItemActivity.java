@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -92,6 +93,7 @@ public class ViewSingleItemActivity extends AppCompatActivity {
                             user_name,
                             user_pwd,
                             item_ID);
+                    Log.v("see res", resp);
                     if (resp.equals("###DELETE_ITEM_SUCCESS###")) {
                         final CharSequence[] options = { "OK" };
                         AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleItemActivity.this);
@@ -102,7 +104,8 @@ public class ViewSingleItemActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int item) {
                                 if (options[item].equals("OK")) {
                                     dialog.dismiss();
-                                    Intent i = new Intent(context, ViewAllItemsActivity.class);
+                                    //Intent i = new Intent(this, ViewSingleItemActivity.class);
+                                    Intent i = new Intent(HomeActivity.context, HomeActivity.class);
                                     startActivity(i);
                                 }
                             }

@@ -31,7 +31,7 @@ public class DeleteItemHttp extends Http {
 
     public void run(){
         // child thread
-        String url = "/login?" + "user_name=" + username + "&user_pwd=" + password + "&item_ID=" + item_ID;
+        String url = "/delete_item?" + "user_name=" + username + "&user_pwd=" + password + "&item_ID=" + item_ID;
         this.response = getHttp(url);
     }
 }

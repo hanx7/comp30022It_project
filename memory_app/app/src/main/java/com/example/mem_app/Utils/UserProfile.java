@@ -33,20 +33,7 @@ public class UserProfile {
                 all_images.add(image);
         }
     }
-//    public void transfer_hmap(){
-//
-//        for(String item: all_images){
-//
-//            SingleItem singleItem = new SingleItem(item.split("%%INFO_SPLITOR%%")[0] ,
-//                               item.split("%%INFO_SPLITOR%%")[1] ,
-//                               item.split("%%INFO_SPLITOR%%")[2] ,
-//                               item.split("%%INFO_SPLITOR%%")[3]);
-//
-//            items.add(singleItem);
-//
-//            item_hmap.put(singleItem.getItem_name(), singleItem);
-//        }
-//    }
+
 
     public  HashMap<String, SingleItem> getItemHmap() {
         item_hmap = new HashMap<>();

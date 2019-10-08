@@ -18,7 +18,7 @@ import com.example.mem_app.HttpReqs.SignupHttp;
 public class HomeActivity extends AppCompatActivity{
 
     public static AlertDialog alert;
-
+    public static Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity{
 
         setContentView(R.layout.main);
         Intent intent = getIntent();
-
+        context = getApplicationContext();
     }
 
     public void onCategoryButtonClick(View view) {
