@@ -47,8 +47,6 @@ public class EventCategoryActivity extends AppCompatActivity {
         eventName6 = (TextView)findViewById(R.id.eventCategoryEvent6);
         events =  MainActivity.user_profile.getItems().get(ViewSingleItemActivity.currentItemID).getEventHmap();
         init();
-
-
     }
 
     private void init(){

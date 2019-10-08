@@ -9,6 +9,30 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/eventDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onDeleteButtonClick"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/eventEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onEditButtonClick"
+        android:text="Edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/eventGoBack"
         android:layout_width="52dp"
         android:layout_height="52dp"
@@ -78,7 +102,6 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical"
         android:singleLine="false"
-        android:text="@android:string/VideoView_error_text_invalid_progressive_playback"
         android:textColor="#3C3A3A"
         android:textSize="18sp"
         android:typeface="normal"
