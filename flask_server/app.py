@@ -34,6 +34,7 @@ ITEM_ID = "item_ID"
 EVENT_TITLE = "event_title"
 EVENT_CONTENT = "event_content"
 EVENT_TIME = "event_time"
+EVENT_ID = "event_id"
 
 # return values
 USER_LOGIN_SUCCESS = "###USER_LOGIN_SUCCESS###"
@@ -75,6 +76,7 @@ mongo_db_list = mongo_client.list_database_names()
 print(mongo_db_list)
 # itemID
 item_id = len(list(mongo_db[ITEM_TABLE].find()))
+event_id = len(list(mongo_db[EVENT_TABLE].find()))
 
 def dbInsertUser(db, user_name, user_pwd, first_name, last_name, email, dob):
     table = db[USER_TABLE]
@@ -138,9 +140,11 @@ def dbCheckItemExistence(db, user_name, item_name):
 
 
 def dbInsertEvent(db, user_name, item_name, item_ID, event_title, event_content, event_time, image_string):
+    global event_id
+    event_id = event_id + 1;
     table = db[EVENT_TABLE]
     new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: item_ID, EVENT_TITLE: event_title,
-                 EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: image_string}
+                 EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: image_string, EVENT_ID: event_id}
     print(table.insert_one(new_entry))
 
 
@@ -283,6 +287,8 @@ def viewEvent():
             res += entry[ITEM_NAME]
             res += INFO_SPLITOR
             res += entry[ITEM_ID]
+            res += INFO_SPLITOR
+            res += str(entry[EVENT_ID])
             res += IMAGE_SPLITOR
         return res
 

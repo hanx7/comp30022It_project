@@ -47,6 +47,7 @@ public class SingleItem {
                 String eventContent = eventElements[3];
                 String itemName = eventElements[4];
                 String itemID = eventElements[5];
+                String eventId = eventElements[6];
 
                 //            Log.d("debug-item", itemName);
 
