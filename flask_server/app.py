@@ -61,8 +61,7 @@ CHARSET_ENCODE = "utf-8"
 IMAGE_SPLITOR = "%%IMAGE_SPLITOR%%"
 INFO_SPLITOR = "%%INFO_SPLITOR%%"
 
-# itemID
-item_id = 0
+
 
 app = Flask(__name__)
 
@@ -74,7 +73,8 @@ print(mongo_db_list)
 mongo_db = mongo_client[DB_NAME]
 mongo_db_list = mongo_client.list_database_names()
 print(mongo_db_list)
-
+# itemID
+item_id = len(list(mongo_db[ITEM_TABLE].find()))
 
 def dbInsertUser(db, user_name, user_pwd, first_name, last_name, email, dob):
     table = db[USER_TABLE]
@@ -320,6 +320,29 @@ def delete_item():
         return res
     except:
         res += "###DELETE_ITEM_FAILED###"
+        return res
+
+@app.route('/edit_item', methods=["GET", "POST"])
+def edit_item():
+    user_name = request.args.get(USER_NAME)
+    user_pwd = request.args.get(USER_PWD)
+    item_name = request.args.get(ITEM_NAME)
+    description = request.args.get(DESCRIPTION)
+    data = request.get_data().decode(CHARSET_ENCODE)
+    i_id = request.args.get(ITEM_ID)
+    res = ""
+    table = mongo_db[ITEM_TABLE]
+    try:
+        print("{}, {}, {}".format(i_id, item_name, description))
+        table.delete_one({ITEM_ID: int(i_id)})
+        table.insert_one({USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: data, ITEM_ID: int(i_id)})
+        #table.replace_one({ITEM_ID: int(i_id)}, {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: data, ITEM_ID:str(i_id)})
+        res += "###EDIT_ITEM_SUCCESS###"
+        print("m1")
+        return res
+    except:
+        print("m2")
+        res += "###EDIT_ITEM_FAILED###"
         return res
 
 if __name__ == "__main__":

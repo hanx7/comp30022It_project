@@ -41,7 +41,7 @@ public class EditItemHttp extends Http {
 
     public void run(){
         // child thread
-        String url =    "/EditItem?" +
+        String url =    "/edit_item?" +
                 "user_name=" + username +
                 "&user_pwd=" + password +
                 "&item_name=" + item_name +

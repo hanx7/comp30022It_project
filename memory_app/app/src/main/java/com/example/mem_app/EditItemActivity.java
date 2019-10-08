@@ -11,6 +11,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
 import android.app.AlertDialog;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,8 +52,8 @@ public class EditItemActivity extends AppCompatActivity{
 
     public void onEditButtonClick(View view){
 
-        final TextView text_item_name = (TextView) super.findViewById(R.id.addItemName);
-        final TextView text_description = (TextView) super.findViewById(R.id.addItemDescription);
+        final EditText text_item_name = (EditText) super.findViewById(R.id.editItemName);
+        final EditText text_description = (EditText) super.findViewById(R.id.editItemDescription);
         final String text_image_string = image_string;
         final String user_name = MainActivity.user_profile.user_name;
         final String user_pwd = MainActivity.user_profile.user_pwd;
@@ -62,12 +63,10 @@ public class EditItemActivity extends AppCompatActivity{
         System.out.println("USER_PWD = " + user_pwd);
         System.out.println("Image String = " + text_image_string);
 
-        String resp = MainActivity.processor.editItemHttpSend(   text_item_name,
-                text_description,
-                text_image_string,
-                user_name,
-                user_pwd,
-                item_ID);
+        String name = text_item_name.getText().toString();
+        String description = text_description.getText().toString();
+        String resp = MainActivity.processor.editItemHttpSend(name, description, image_string, user_name, user_pwd, item_ID);
+
         if (resp.equals("###EDIT_ITEM_SUCCESS###")) {
             final CharSequence[] options = { "OK" };
             AlertDialog.Builder builder = new AlertDialog.Builder(EditItemActivity.this);
@@ -78,7 +77,7 @@ public class EditItemActivity extends AppCompatActivity{
                 public void onClick(DialogInterface dialog, int item) {
                     if (options[item].equals("OK")) {
                         dialog.dismiss();
-                        Intent i = new Intent(context, ViewSingleItemActivity.class);
+                        Intent i = new Intent(HomeActivity.context, HomeActivity.class);
                         startActivity(i);
                     }
                 }

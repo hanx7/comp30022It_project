@@ -1,5 +1,6 @@
 package com.example.mem_app;
 
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mem_app.HttpReqs.AddEventHttp;
@@ -49,15 +50,15 @@ public class Processor {
     }
 
 
-    public String editItemHttpSend(  TextView text_item_name,
-                                    TextView text_description,
+    public String editItemHttpSend(  String text_item_name,
+                                    String text_description,
                                     String image_string,
                                     String user_name,
                                     String user_pwd,
                                     String item_ID){
 
-        EditItemHttp editItemHttp = new EditItemHttp(  text_item_name.getText().toString(),
-                text_description.getText().toString(),
+        EditItemHttp editItemHttp = new EditItemHttp(  text_item_name,
+                text_description,
                 image_string,
                 user_name,
                 user_pwd,
