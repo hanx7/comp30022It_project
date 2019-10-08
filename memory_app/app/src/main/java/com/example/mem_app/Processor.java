@@ -12,6 +12,7 @@ import com.example.mem_app.HttpReqs.LoginHttp;
 import com.example.mem_app.HttpReqs.SignupHttp;
 import com.example.mem_app.HttpReqs.ViewEventHttp;
 import com.example.mem_app.HttpReqs.ViewItemHttp;
+import com.example.mem_app.HttpReqs.DeleteEventHttp;
 
 import java.util.Date;
 
@@ -101,5 +102,10 @@ public class Processor {
     public String deleteItemHttpSend(String text_username, String text_password, String item_ID){
         DeleteItemHttp deleteItemHttp = new DeleteItemHttp(text_username, text_password,item_ID);
         return deleteItemHttp.send();
+    }
+
+    public String deleteEventHttpSend(String text_username, String text_password, String item_ID, String event_ID){
+        DeleteEventHttp deleteEventHttp = new DeleteEventHttp(text_username, text_password,item_ID, event_ID);
+        return deleteEventHttp.send();
     }
 }

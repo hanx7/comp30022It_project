@@ -24,6 +24,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ViewSingleEventActivity" />
         <activity android:name=".EditItemActivity" />
+        <activity android:name=".EditEventActivity" />
         <activity android:name=".MainActivity">
 
             <intent-filter>

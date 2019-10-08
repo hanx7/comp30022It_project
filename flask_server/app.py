@@ -34,7 +34,7 @@ ITEM_ID = "item_ID"
 EVENT_TITLE = "event_title"
 EVENT_CONTENT = "event_content"
 EVENT_TIME = "event_time"
-EVENT_ID = "event_id"
+EVENT_ID = "event_ID"
 
 # return values
 USER_LOGIN_SUCCESS = "###USER_LOGIN_SUCCESS###"
@@ -351,6 +351,23 @@ def edit_item():
     except:
         print("m2")
         res += "###EDIT_ITEM_FAILED###"
+        return res
+
+@app.route('/delete_event', methods=["GET"])
+def delete_event():
+    user_name = request.args.get(USER_NAME)
+    user_passsword = request.args.get(USER_PWD)
+    item_id = request.args.get(ITEM_ID)
+    event_id = request.args.get(EVENT_ID)
+    table = mongo_db[EVENT_TABLE]
+    res = ""
+    try:
+        table.delete_one({EVENT_ID: int(event_id)})
+        print("delete success")
+        res += "###DELETE_EVENT_SUCCESS###"
+        return res
+    except:
+        res += "###DELETE_EVENT_FAILED###"
         return res
 
 if __name__ == "__main__":

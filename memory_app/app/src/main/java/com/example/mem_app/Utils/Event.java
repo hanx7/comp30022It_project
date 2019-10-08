@@ -26,4 +26,5 @@ public class Event {
     public String getItemName(){ return itemName;}
     public String getEventTime(){ return eventTime;}
     public String getItemID(){ return itemID;}
+    public String getEventID() {return eventID;}
 }
