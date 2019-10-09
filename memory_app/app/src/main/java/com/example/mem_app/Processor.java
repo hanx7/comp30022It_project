@@ -68,6 +68,8 @@ public class Processor {
         return editItemHttp.send();
     }
 
+
+    // call view item http method which will invoke the method in view item http
     public String viewItemHttpSend(String user_name, String user_password){
 
         ViewItemHttp viewItemHttp = new ViewItemHttp(user_name,user_password);

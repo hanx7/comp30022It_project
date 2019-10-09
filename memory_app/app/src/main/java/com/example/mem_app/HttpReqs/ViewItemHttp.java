@@ -30,6 +30,7 @@ public class ViewItemHttp extends Http {
         return response;
     }
 
+    // send url from android to flask
     public void run(){
         // child thread
         String url = "/viewItem?"

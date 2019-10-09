@@ -241,6 +241,7 @@ def addEvent():
         return ADD_EVENT_FAILED
 
 
+#retrive all item info in db and send it into android
 @app.route('/viewItem', methods=["GET"])
 def viewItem():
     user_name = request.args.get(USER_NAME)
@@ -262,7 +263,6 @@ def viewItem():
             res += str(entry[ITEM_ID])
             res += IMAGE_SPLITOR
         return res
-
 
 @app.route('/viewEvent', methods=["GET"])
 def viewEvent():
@@ -313,6 +313,7 @@ def get_user_info():
 
         return res
 
+#get info from android and find the record by item id in db, deleting the record from db
 @app.route('/delete_item', methods=["GET"])
 def delete_item():
     user_name = request.args.get(USER_NAME)
@@ -330,6 +331,7 @@ def delete_item():
         res += "###DELETE_ITEM_FAILED###"
         return res
 
+#get info from android and find the record in db and update it
 @app.route('/edit_item', methods=["GET", "POST"])
 def edit_item():
     user_name = request.args.get(USER_NAME)

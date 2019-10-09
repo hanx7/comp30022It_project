@@ -24,20 +24,26 @@ import java.util.HashMap;
 import com.example.mem_app.Utils.SingleItem;
 
 public class ViewAllItemsActivity extends AppCompatActivity {
+    // items is a hash map which keeps item id as key and the item instance as value
     HashMap<String, SingleItem> items;
+    // image view 1 to 4
     ImageView image1;
     ImageView image2;
     ImageView image3;
     ImageView image4;
+    // textview 1 to 4 are to show item name
     TextView userName1;
     TextView userName2;
     TextView userName3;
     TextView userName4;
+    // 4 items correspond to items are going to show in 4 image view
     SingleItem item1;
     SingleItem item2;
     SingleItem item3;
     SingleItem item4;
+    // track number of items
     int numOfItem;
+    // record which page are we showing now
     int page = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +60,11 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         userName3 = (TextView)findViewById(R.id.viewitemUsername3);
         userName4 = (TextView)findViewById(R.id.viewitemUsername4);
         items = MainActivity.user_profile.getItemHmap();
-        //Log.v("here for debug", String.valueOf(MainActivity.user_profile.getItemHmap().size()));
         init();
 
     }
 
+    // initailize the show all item page, rendering items depending on how much items we have
     private void init(){
         numOfItem = items.size();
         if(numOfItem >= 1){
@@ -94,32 +100,48 @@ public class ViewAllItemsActivity extends AppCompatActivity {
 
 
 
-
+    // when image button is clicked on, first to check if the button stores item inside it
+    // if yes then render the item info, otherwise do nothing
     public void onImgButton1Click(View view){
-        Intent i = new Intent(this, ViewSingleItemActivity.class);
-        i.putExtra("itemID", item1.getItemID());
-        startActivity(i);
+        int num = numOfItem - (page-1)*4;
+        if(num > 0){
+            Intent i = new Intent(this, ViewSingleItemActivity.class);
+            i.putExtra("itemID", item1.getItemID());
+            startActivity(i);
+        }
     }
 
 
     public void onImgButton2Click(View view){
-        Intent i = new Intent(this, ViewSingleItemActivity.class);
-        i.putExtra("itemID", item2.getItemID());
-        startActivity(i);
+        int num = numOfItem - (page-1)*4;
+        if(num > 1){
+            Intent i = new Intent(this, ViewSingleItemActivity.class);
+            i.putExtra("itemID", item2.getItemID());
+            startActivity(i);
+        }
     }
 
     public void onImgButton3Click(View view){
-        Intent i = new Intent(this, ViewSingleItemActivity.class);
-        i.putExtra("itemID", item3.getItemID());
-        startActivity(i);
+        int num = numOfItem - (page-1)*4;
+        if(num > 2){
+            Intent i = new Intent(this, ViewSingleItemActivity.class);
+            i.putExtra("itemID", item3.getItemID());
+            startActivity(i);
+        }
     }
 
     public void onImgButton4Click(View view){
-        Intent i = new Intent(this, ViewSingleItemActivity.class);
-        i.putExtra("itemID", item4.getItemID());
-        startActivity(i);
+        int num = numOfItem - (page-1)*4;
+        if(num > 3){
+            Intent i = new Intent(this, ViewSingleItemActivity.class);
+            i.putExtra("itemID", item4.getItemID());
+            startActivity(i);
+        }
     }
 
+    // when previous button is clicked on, first to check if we have enough items that can be shown
+    // if yes then render the previous 4 items, otherwise pop up a warning message saying no more
+    // items
     public void onPreviousButtonClick(View view){
         if(page > 1){
             page--;
@@ -151,6 +173,9 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         }
     }
 
+
+    // when next page button is clicked on, first to decide how many items can be shown in the next
+    // page, and if there are no more items just pop up a warning message
     public void onNextButtonClick(View view){
         if(numOfItem > page*4){
             int imageShown = 0;
@@ -211,6 +236,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
 
     }
 
+    // convert a string message into bitmap which can be shown as a image later
     private Bitmap StringToBitMap(String encodedString){
         try{
             byte [] encodeByte = Base64.decode(encodedString,Base64.DEFAULT);
@@ -223,6 +249,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         }
     }
 
+    // this function is to pop a alert message inside a box
     private void popAlert(String text){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         AlertDialog ad = alertDialogBuilder.create();
@@ -230,6 +257,7 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         ad.show();
     }
 
+    // when the main button click on, goes back to main page!
     public void onMainButtonClick(View view){
         Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
