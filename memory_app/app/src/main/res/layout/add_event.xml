@@ -28,7 +28,7 @@
         android:layout_marginStart="131dp"
         android:background="#908C8C"
         android:onClick="onUploadEventImageButtonClick"
-        android:text="Upload Item Image"
+        android:text="@string/upload_event_image"
         android:textColor="#FFFFFE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addEventImage" />

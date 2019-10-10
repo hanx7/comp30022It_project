@@ -45,4 +45,5 @@
     <string name="Main">Main</string>
     <string name="edit_event_image">Edit Event Image</string>
     <string name="edit">Edit</string>
+    <string name="upload_event_image">Upload Event Image</string>
 </resources>

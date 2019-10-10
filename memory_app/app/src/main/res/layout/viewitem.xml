@@ -21,14 +21,14 @@
         app:layout_constraintEnd_toStartOf="@+id/eventCategoryEvent1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button12"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972" />
+        app:layout_constraintTop_toBottomOf="@+id/viewitemUsername3"
+        app:layout_constraintVertical_bias="0.714" />
 
     <Button
         android:id="@+id/eventCategoryEvent1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:onClick="onNextButtonClick"
         android:text="Next Page"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:onClick="onPreviousButtonClick"
         android:text="Previous Page"
         app:layout_constraintEnd_toStartOf="@+id/logoutButton"
@@ -54,7 +54,7 @@
         android:layout_width="141dp"
         android:layout_height="176dp"
         android:layout_marginStart="232dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="128dp"
         android:clickable="false"
         android:contentDescription="TODO"
         android:onClick="onImgButton2Click"
@@ -68,7 +68,7 @@
         android:layout_width="141dp"
         android:layout_height="176dp"
         android:layout_marginStart="232dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="380dp"
         android:clickable="false"
         android:contentDescription="TODO"
         android:onClick="onImgButton4Click"
@@ -82,7 +82,7 @@
         android:layout_width="141dp"
         android:layout_height="176dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="380dp"
         android:clickable="false"
         android:contentDescription="TODO"
         android:onClick="onImgButton3Click"
@@ -95,8 +95,8 @@
         android:id="@+id/viewitemImage1"
         android:layout_width="141dp"
         android:layout_height="176dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="128dp"
         android:clickable="false"
         android:contentDescription="TODO"
         android:onClick="onImgButton1Click"
@@ -127,7 +127,7 @@
         android:id="@+id/viewitemUsername2"
         android:layout_width="140dp"
         android:layout_height="41dp"
-        android:layout_marginStart="59dp"
+        android:layout_marginStart="56dp"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/viewitemUsername1"
         app:layout_constraintTop_toBottomOf="@+id/viewitemImage2" />
@@ -136,7 +136,7 @@
         android:id="@+id/viewitemUsername1"
         android:layout_width="140dp"
         android:layout_height="41dp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="36dp"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewitemImage1" />
@@ -149,10 +149,10 @@
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <!--    <ImageView-->
     <!--        android:id="@+id/item_image"-->
