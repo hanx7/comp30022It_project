@@ -8,80 +8,63 @@
 
 
     <Button
-        android:id="@+id/categoryButton"
-        style="@style/Base.TextAppearance.AppCompat.Menu"
-        android:layout_width="371dp"
-        android:layout_height="152dp"
-        android:background="#F0FC8B8B"
-        android:onClick="onCategoryButtonClick"
-        android:text="@string/category"
-        android:textColor="#F9F9F9"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/addItemButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <Button
         android:id="@+id/addItemButton"
         style="@style/Base.TextAppearance.AppCompat.Menu"
-        android:layout_width="173dp"
-        android:layout_height="122dp"
+        android:layout_width="371dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
         android:background="#AED581"
+        android:onClick="onAddItemButtonClick"
         android:text="@string/add_item"
         android:textAlignment="center"
         android:textColor="#F9F9F9"
         android:textSize="28sp"
-        android:onClick="onAddItemButtonClick"
-        app:layout_constraintBottom_toTopOf="@+id/myInfoButton"
-        app:layout_constraintEnd_toStartOf="@+id/allItemBotton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/allItemBotton"
         style="@style/Base.TextAppearance.AppCompat.Menu"
-        android:layout_width="174dp"
-        android:layout_height="120dp"
+        android:layout_width="371dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:background="#D850BBF1"
         android:onClick="onViewAllItemsButtonClick"
         android:text="@string/allItems"
         android:textColor="#F9F9F9"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/myInfoButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addItemButton"
-        app:layout_constraintTop_toBottomOf="@+id/categoryButton"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addItemButton" />
 
     <Button
         android:id="@+id/myInfoButton"
         style="@style/Base.TextAppearance.AppCompat.Menu"
         android:layout_width="371dp"
-        android:layout_height="152dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:background="#FACF48"
+        android:onClick="onUserInformationButtonClick"
         android:text="@string/myInfo"
         android:textColor="#F9F9F9"
         android:textSize="30sp"
-        android:onClick="onUserInformationButtonClick"
-        app:layout_constraintBottom_toTopOf="@+id/main_button_logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addItemButton" />
+        app:layout_constraintTop_toBottomOf="@+id/allItemBotton" />
 
     <Button
         android:id="@+id/main_button_logout"
         style="@style/Base.TextAppearance.AppCompat.Menu"
         android:layout_width="376dp"
         android:layout_height="74dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
         android:background="#FF6565"
+        android:onClick="onLogoutButtonClick"
         android:text="@string/logout"
         android:textColor="#F4F4F4"
         android:textSize="28sp"
-        android:onClick="onLogoutButtonClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myInfoButton" />
 

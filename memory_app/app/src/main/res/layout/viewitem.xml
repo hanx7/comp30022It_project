@@ -109,49 +109,37 @@
         android:id="@+id/viewitemUsername4"
         android:layout_width="140dp"
         android:layout_height="41dp"
+        android:layout_marginStart="56dp"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintStart_toEndOf="@+id/viewitemUsername3"
+        app:layout_constraintTop_toBottomOf="@+id/viewitemImage4" />
 
     <TextView
         android:id="@+id/viewitemUsername3"
         android:layout_width="140dp"
         android:layout_height="41dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        android:layout_marginStart="36dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintTop_toBottomOf="@+id/viewitemImage3" />
 
     <TextView
         android:id="@+id/viewitemUsername2"
         android:layout_width="140dp"
         android:layout_height="41dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        android:layout_marginStart="59dp"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/viewitemUsername1"
+        app:layout_constraintTop_toBottomOf="@+id/viewitemImage2" />
 
     <TextView
         android:id="@+id/viewitemUsername1"
         android:layout_width="140dp"
         android:layout_height="41dp"
+        android:layout_marginStart="33dp"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintTop_toBottomOf="@+id/viewitemImage1" />
 
     <TextView
         android:id="@+id/viewitemTextItem"

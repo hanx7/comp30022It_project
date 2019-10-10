@@ -35,7 +35,7 @@ public class ViewSingleItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Show login page
+        // Show item info page
         setContentView(R.layout.item_info);
         itemImage = (ImageView)findViewById(R.id.itemInfoImage);
         itemName = (TextView)findViewById(R.id.itemInfoName);

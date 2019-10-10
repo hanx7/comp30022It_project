@@ -77,7 +77,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-
+    // delete
     public void onDeleteButtonClick(View view) {
         final CharSequence[] options = { "Confirm","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleEventActivity.this);
