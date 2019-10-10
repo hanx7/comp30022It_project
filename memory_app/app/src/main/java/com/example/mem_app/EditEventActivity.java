@@ -65,6 +65,8 @@ public class EditEventActivity extends AppCompatActivity {
 
         String title = text_event_name.getText().toString();
         String story = text_event_story.getText().toString();
+
+        // Send request to change corresponding entry in database via http, and get response message
         String resp = MainActivity.processor.editEventHttpSend(image_string,
                 user_name,
                 user_pwd,
@@ -75,6 +77,7 @@ public class EditEventActivity extends AppCompatActivity {
                 story,
                 ViewSingleEventActivity.currentEvent.getEventTime());
 
+        // Upon success, return to homepage
         if (resp.equals("###EDIT_EVENT_SUCCESS###")) {
             final CharSequence[] options = { "OK" };
             AlertDialog.Builder builder = new AlertDialog.Builder(EditEventActivity.this);
@@ -92,6 +95,7 @@ public class EditEventActivity extends AppCompatActivity {
             });
             builder.show();
         }
+        // Failure
         else if (resp.equals("###EDIT_ITEM_FAILED###")){
             final CharSequence[] options = { "Cancel" };
             AlertDialog.Builder builder = new AlertDialog.Builder(EditEventActivity.this);

@@ -34,7 +34,7 @@ public class UserProfile {
         }
     }
 
-
+    // Method to get all items under this user from database
     public  HashMap<String, SingleItem> getItemHmap() {
         item_hmap = new HashMap<>();
         String resp = MainActivity.processor.viewItemHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);

@@ -16,7 +16,6 @@ import com.example.mem_app.HttpReqs.ViewItemHttp;
 import com.example.mem_app.HttpReqs.DeleteEventHttp;
 
 import java.util.Date;
-
 public class Processor {
 
     public Processor() {

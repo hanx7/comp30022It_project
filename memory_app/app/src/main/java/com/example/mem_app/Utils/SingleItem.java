@@ -32,6 +32,7 @@ public class SingleItem {
     public String getUpload_username(){return this.upload_username;}
     public String getItemID(){ return this.itemID;}
 
+    // Method to retrieve all events under this item from database
     public HashMap<String, Event> getEventHmap() {
         String resp = MainActivity.processor.viewEventHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd, itemID);
         if (!resp.equals("")) {

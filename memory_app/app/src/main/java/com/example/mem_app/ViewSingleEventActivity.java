@@ -78,6 +78,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
     }
 
 
+    // Method to delete an event
     public void onDeleteButtonClick(View view) {
         final CharSequence[] options = { "Confirm","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleEventActivity.this);
@@ -87,11 +88,13 @@ public class ViewSingleEventActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Confirm"))
                 {
+                    // Collect event information
                     final String user_name = MainActivity.user_profile.user_name;
                     final String user_pwd = MainActivity.user_profile.user_pwd;
                     final String item_ID = ViewSingleItemActivity.currentItemID;
                     final String event_ID = currentEvent.getEventID();
 
+                    // Send request to delete event via http and get response message
                     String resp = MainActivity.processor.deleteEventHttpSend(
                             user_name,
                             user_pwd,
@@ -99,6 +102,8 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                             event_ID);
 
                     Log.v("see res", resp);
+
+                    // If delete success
                     if (resp.equals("###DELETE_EVENT_SUCCESS###")) {
                         final CharSequence[] options = { "OK" };
                         AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleEventActivity.this);
@@ -110,6 +115,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                                 if (options[item].equals("OK")) {
                                     dialog.dismiss();
 
+                                    // Return to home page
 //                                    Intent i = new Intent(getApplicationContext(), EventCategoryActivity.class);
                                     Intent i = new Intent(HomeActivity.context, HomeActivity.class);
                                     startActivity(i);
@@ -118,6 +124,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                         });
                         builder.show();
                     }
+                    // If delete fails
                     else if (resp.equals("###DELETE_ITEM_FAILED###")){
                         final CharSequence[] options = { "Cancel" };
                         AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleEventActivity.this);
@@ -133,6 +140,8 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                         builder.show();
                     }
                 }
+
+                // If cancel delete, stay at View Single Event page
                 else if (options[item].equals("Cancel")) {
                     dialog.dismiss();
                 }
