@@ -15,13 +15,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EventCategoryActivity extends AppCompatActivity {
+    // Events is a hash map which keeps event name as key and the event instance as value
     HashMap<String, Event> events;
+
+    // textview 1 to 6 are to show item name
     TextView eventName1;
     TextView eventName2;
     TextView eventName3;
     TextView eventName4;
     TextView eventName5;
     TextView eventName6;
+
+    // 4 items correspond to events are going to show in 4 image view
     Event event1;
     Event event2;
     Event event3;
@@ -35,7 +40,7 @@ public class EventCategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Show add_item page
+        // Show event_category page
         setContentView(R.layout.event_category);
         TextView item_name = (TextView) super.findViewById(R.id.eventCategoryItemName);
         item_name.setText(ViewSingleItemActivity.currentItemName);
@@ -50,7 +55,7 @@ public class EventCategoryActivity extends AppCompatActivity {
     }
 
 
-
+    // initailize page, show events depending on how much events we have
     private void init(){
         currentPage = 1;
         numOfEvents = events.size();
@@ -86,11 +91,14 @@ public class EventCategoryActivity extends AppCompatActivity {
         }
 
     }
+
+    // Go to AddEventActivity
     public void onGoToAddEventButtonClick(View view){
         Intent i = new Intent(this, AddEventActivity.class);
         startActivity(i);
     }
 
+    // when button is clicked on, go to event info page
     public void oneventCategoryEvent1Click(View view){
         Intent i = new Intent(this, ViewSingleEventActivity.class);
         i.putExtra("eventName", eventName1.getText().toString());

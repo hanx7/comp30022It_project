@@ -52,7 +52,7 @@ public class EditEventActivity extends AppCompatActivity {
         eventStory.setText(ViewSingleEventActivity.currentEvent.getEventContent());
     }
 
-
+    // send new data to database
     public void onEventEditButtonClick(View view){
 
         final EditText text_event_name = (EditText) super.findViewById(R.id.editEventTitle);
@@ -62,10 +62,6 @@ public class EditEventActivity extends AppCompatActivity {
         final String user_pwd = MainActivity.user_profile.user_pwd;
         final String item_ID = ViewSingleItemActivity.currentItemID;
         final String event_ID = ViewSingleEventActivity.currentEvent.getEventID();
-
-//        System.out.println("USER_NAME = " + user_name);
-//        System.out.println("USER_PWD = " + user_pwd);
-//        System.out.println("Image String = " + text_image_string);
 
         String title = text_event_name.getText().toString();
         String story = text_event_story.getText().toString();
@@ -113,14 +109,14 @@ public class EditEventActivity extends AppCompatActivity {
 
     }
 
-
+    // return to current event activity
     public void onEventCancelButtonClick(View view) {
         Intent i = new Intent(this, ViewSingleEventActivity.class);
         i.putExtra("itemID", ViewSingleEventActivity.currentEvent.getEventTitle());
         startActivity(i);
     }
 
-
+    // select image from system album then shown on the app
     public void onEditEventImageButtonClick(View view) {
         final CharSequence[] options = { "Choose from Gallery","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(EditEventActivity.this);
@@ -143,10 +139,7 @@ public class EditEventActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
+    // set new selected image on screen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -167,7 +160,7 @@ public class EditEventActivity extends AppCompatActivity {
     }
 
 
-
+    // convert bitmap to string
     public String BitMapToString(Bitmap userImage1) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         userImage1.compress(Bitmap.CompressFormat.JPEG, 60, baos);
@@ -176,6 +169,7 @@ public class EditEventActivity extends AppCompatActivity {
         return image_string;
     }
 
+    // pop up text
     private void popAlert(String text){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setPositiveButton("ok",null);
@@ -185,6 +179,7 @@ public class EditEventActivity extends AppCompatActivity {
         ad.show();
     }
 
+    // convert string to bitmap
     private Bitmap StringToBitMap(String encodedString){
         try{
             byte [] encodeByte = Base64.decode(encodedString,Base64.DEFAULT);

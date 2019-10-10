@@ -54,7 +54,7 @@ public class ViewSingleItemActivity extends AppCompatActivity {
     }
 
 
-
+    // covert bitmap to string
     private Bitmap StringToBitMap(String encodedString){
         try{
             byte [] encodeByte = Base64.decode(encodedString,Base64.DEFAULT);
@@ -66,17 +66,18 @@ public class ViewSingleItemActivity extends AppCompatActivity {
             return null;
         }
     }
-
+    // go to EventCategoryActivity
     public void onGoToEventButtonClick(View view){
         Intent i = new Intent(this, EventCategoryActivity.class);
         startActivity(i);
     }
-
+    // Go to EditItemButtonActivity
     public void onEditButtonClick(View view) {
         Intent i = new Intent(this, EditItemActivity.class);
         startActivity(i);
     }
 
+    // delete events, send request to delete event info in database
     public void onDeleteButtonClick(View view) {
         final CharSequence[] options = { "Confirm","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleItemActivity.this);

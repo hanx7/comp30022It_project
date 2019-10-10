@@ -37,14 +37,16 @@ public class EditItemActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Show add_item page
+
+        // Show edit item page
         setContentView(R.layout.edit_item);
         Intent intent = getIntent();
         context = getApplicationContext();
+
+        // Display current information of item: name, image, description
         itemImage = (ImageView)findViewById(R.id.editItemImage);
         itemName = (TextView)findViewById(R.id.editItemName);
         itemDescription = (TextView)findViewById(R.id.editItemDescription);
-
         itemImage.setImageBitmap(ViewSingleItemActivity.imageBitmap);
         itemName.setText(ViewSingleItemActivity.itemNameText);
         itemDescription.setText(ViewSingleItemActivity.itemDescriptionText);
@@ -100,13 +102,15 @@ public class EditItemActivity extends AppCompatActivity{
         }
 
     }
+
+    // return to ViewSingleItemActivity
     public void onCancelButtonClick(View view) {
         Intent i = new Intent(this, ViewSingleItemActivity.class);
         i.putExtra("itemID", ViewSingleItemActivity.currentItemID);
         startActivity(i);
     }
 
-
+    // select image from system album then shown on the app
     public void onEditImageButtonClick(View view) {
         final CharSequence[] options = { "Choose from Gallery","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(EditItemActivity.this);
@@ -129,6 +133,7 @@ public class EditItemActivity extends AppCompatActivity{
 
     }
 
+    // set new selected image on screen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -148,6 +153,7 @@ public class EditItemActivity extends AppCompatActivity{
         }
     }
 
+    // convert bitmap to string
     public String BitMapToString(Bitmap userImage1) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         userImage1.compress(Bitmap.CompressFormat.JPEG, 60, baos);
@@ -156,6 +162,7 @@ public class EditItemActivity extends AppCompatActivity{
         return image_string;
     }
 
+    // pop up text
     private void popAlert(String text){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setPositiveButton("ok",null);
@@ -165,6 +172,7 @@ public class EditItemActivity extends AppCompatActivity{
         ad.show();
     }
 
+    // convert string to bitmap
     private Bitmap StringToBitMap(String encodedString){
         try{
             byte [] encodeByte = Base64.decode(encodedString,Base64.DEFAULT);

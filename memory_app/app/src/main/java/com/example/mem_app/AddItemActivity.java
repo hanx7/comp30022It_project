@@ -36,6 +36,7 @@ public class AddItemActivity extends AppCompatActivity{
         context = getApplicationContext();
     }
 
+    // when add button is clicked, add user input data into database
     public void onAddButtonClick(View view){
         final TextView text_item_name = (TextView) super.findViewById(R.id.addItemName);
         final TextView text_description = (TextView) super.findViewById(R.id.addItemDescription);
@@ -85,17 +86,19 @@ public class AddItemActivity extends AppCompatActivity{
         }
 
     }
+
+    // Back to login
     public void onLogoutButtonClick(View view) {
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
     }
-
+    // Go to HomeActivity
     public void onHomeButtonClick(View view) {
         Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
 
-
+    // select image from system album then shown on the app
     public void onUploadButtonClick(View view) {
         final CharSequence[] options = { "Choose from Gallery","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(AddItemActivity.this);
@@ -118,6 +121,7 @@ public class AddItemActivity extends AppCompatActivity{
 
     }
 
+    // set selected image on screen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -137,6 +141,7 @@ public class AddItemActivity extends AppCompatActivity{
         }
     }
 
+    // convert bitmap to string
     public String BitMapToString(Bitmap userImage1) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         userImage1.compress(Bitmap.CompressFormat.JPEG, 60, baos);
@@ -145,6 +150,7 @@ public class AddItemActivity extends AppCompatActivity{
         return image_string;
     }
 
+    // pop up text
     private void popAlert(String text){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setPositiveButton("ok",null);

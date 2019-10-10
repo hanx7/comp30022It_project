@@ -34,7 +34,7 @@ public class AddEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // show add event page
         setContentView(R.layout.add_event);
         TextView item_name = (TextView) super.findViewById(R.id.addEventItemName);
         item_name.setText(ViewSingleItemActivity.currentItemName);
@@ -42,6 +42,7 @@ public class AddEventActivity extends AppCompatActivity {
         context = getApplicationContext();
     }
 
+    // when add button is clicked, add user input data into database
     public void onAddEventButtonClick(View view){
         final String eventTitle = ((TextView) super.findViewById(R.id.addEventTitle)).getText().toString();
         final String eventContent = ((TextView) super.findViewById(R.id.addEventContent)).getText().toString();
@@ -52,12 +53,8 @@ public class AddEventActivity extends AppCompatActivity {
         final String eventImage = imageString;
         final String username = MainActivity.user_profile.user_name;
         final String userPassword = MainActivity.user_profile.user_pwd;
-
         final String itemID = ViewSingleItemActivity.currentItemID;
-//        String itemID = "1";
-        //SingleItem item = MainActivity.user_profile.getItems().get(itemID);
         final String itemName = ViewSingleItemActivity.currentItemName;
-//        String itemName = "test";
 
         String resp = MainActivity.processor.addEventHttpSend(
                 eventTitle,
@@ -100,7 +97,7 @@ public class AddEventActivity extends AppCompatActivity {
         }
     }
 
-
+    // select image from system album then shown on the app
     public void onUploadEventImageButtonClick(View view) {
         final CharSequence[] options = { "Choose from Gallery","Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(AddEventActivity.this);
@@ -122,6 +119,7 @@ public class AddEventActivity extends AppCompatActivity {
 
     }
 
+    // set selected image on screen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -141,6 +139,7 @@ public class AddEventActivity extends AppCompatActivity {
         }
     }
 
+    // convert bitmap to string
     public String BitMapToString(Bitmap userImage1) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         userImage1.compress(Bitmap.CompressFormat.JPEG, 60, baos);
@@ -149,6 +148,7 @@ public class AddEventActivity extends AppCompatActivity {
         return imageString;
     }
 
+    // pop up text
     private void popAlert(String text){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setPositiveButton("ok",null);
