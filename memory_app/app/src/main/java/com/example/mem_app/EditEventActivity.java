@@ -47,7 +47,8 @@ public class EditEventActivity extends AppCompatActivity {
         eventTitle = (TextView) findViewById(R.id.editEventTitle);
         eventStory = (TextView) findViewById(R.id.editEventStory);
 
-        eventImage.setImageBitmap(StringToBitMap(ViewSingleEventActivity.currentEvent.getEventImage()));
+        eventImage.setImageBitmap(StringToBitMap(
+                ViewSingleEventActivity.currentEvent.getEventImage()));
         eventTitle.setText(ViewSingleEventActivity.currentEvent.getEventTitle());
         eventStory.setText(ViewSingleEventActivity.currentEvent.getEventContent());
     }
@@ -66,7 +67,7 @@ public class EditEventActivity extends AppCompatActivity {
         String title = text_event_name.getText().toString();
         String story = text_event_story.getText().toString();
 
-        // Send request to change corresponding entry in database via http, and get response message
+        //Send request to change corresponding entry in database via http, and get response message
         String resp = MainActivity.processor.editEventHttpSend(image_string,
                 user_name,
                 user_pwd,
@@ -130,8 +131,8 @@ public class EditEventActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Choose from Gallery"))
                 {
-                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    //Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    Intent intent = new Intent(Intent.ACTION_PICK,
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
                 }
                 else if (options[item].equals("Cancel")) {
@@ -153,7 +154,6 @@ public class EditEventActivity extends AppCompatActivity {
 
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                // Log.d(TAG, String.valueOf(bitmap));
                 BitMapToString(bitmap);
                 event_image= findViewById(R.id.editEventImage);
                 event_image.setImageBitmap(bitmap);

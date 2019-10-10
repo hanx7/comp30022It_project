@@ -26,7 +26,6 @@ public class UserProfile {
     }
 
     public void add_image(String[] images){
-//        System.out.println("XXXXXXX" + images[0]);
         all_images = new ArrayList<>();
         for (String image: images) {
             if (image != null)
@@ -37,7 +36,8 @@ public class UserProfile {
     // Method to get all items under this user from database
     public  HashMap<String, SingleItem> getItemHmap() {
         item_hmap = new HashMap<>();
-        String resp = MainActivity.processor.viewItemHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd);
+        String resp = MainActivity.processor.viewItemHttpSend(MainActivity.user_profile.user_name,
+                MainActivity.user_profile.user_pwd);
         if (!resp.equals("")) {
             String all_items[] = resp.split("%%IMAGE_SPLITOR%%");
 
@@ -50,7 +50,8 @@ public class UserProfile {
                 String userName = itemElements[3];
                 String itemID = itemElements[4];
                 Log.d("debug-item", itemName);
-                SingleItem singleItem = new SingleItem(itemName, itemImage, description, userName, itemID);
+                SingleItem singleItem = new SingleItem(itemName,
+                        itemImage, description, userName, itemID);
                 item_hmap.put(itemID, singleItem);
             }
         }
@@ -58,9 +59,7 @@ public class UserProfile {
     }
 
     public HashMap<String, SingleItem> getItems(){ return item_hmap;}
-//    public  ArrayList<SingleItem> getItems() {
-//        return items;
-//    }
+
 
     public String getUserName() {
         return user_name;

@@ -10,7 +10,8 @@ public class Event {
     private String eventImage;
     private String eventID;
 
-    public Event(String eventTitle, String eventContent, String eventTime, String eventImage, String itemName, String itemID, String eventID){
+    public Event(String eventTitle, String eventContent, String eventTime,
+                 String eventImage, String itemName, String itemID, String eventID){
         this.eventContent = eventContent;
         this.eventTime = eventTime;
         this.eventTitle = eventTitle;

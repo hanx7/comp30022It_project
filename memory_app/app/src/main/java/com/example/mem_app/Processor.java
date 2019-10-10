@@ -22,14 +22,16 @@ public class Processor {
     }
 
     public String loginHttpSend(TextView text_username, TextView text_password){
-        LoginHttp login_http = new LoginHttp(text_username.getText().toString(), text_password.getText().toString());
+        LoginHttp login_http = new LoginHttp(text_username.getText().toString(),
+                text_password.getText().toString());
         return login_http.send();
     }
 
     public String signupHttpSend(TextView text_username, TextView text_password ,
                                   TextView text_first_name, TextView text_last_name,
                                   TextView text_email, TextView text_dob){
-        SignupHttp signupHttp = new SignupHttp(text_username.getText().toString(), text_password.getText().toString(),
+        SignupHttp signupHttp = new SignupHttp(text_username.getText().toString(),
+                text_password.getText().toString(),
                 text_first_name.getText().toString(),
                 text_last_name.getText().toString(),
                 text_email.getText().toString(), text_dob.getText().toString());
@@ -106,8 +108,10 @@ public class Processor {
         return deleteItemHttp.send();
     }
 
-    public String deleteEventHttpSend(String text_username, String text_password, String item_ID, String event_ID){
-        DeleteEventHttp deleteEventHttp = new DeleteEventHttp(text_username, text_password,item_ID, event_ID);
+    public String deleteEventHttpSend(String text_username, String text_password,
+                                      String item_ID, String event_ID){
+        DeleteEventHttp deleteEventHttp = new DeleteEventHttp(text_username,
+                text_password,item_ID, event_ID);
         return deleteEventHttp.send();
     }
 

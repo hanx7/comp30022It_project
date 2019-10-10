@@ -50,7 +50,8 @@ public class EventCategoryActivity extends AppCompatActivity {
         eventName4 = (TextView)findViewById(R.id.eventCategoryEvent4);
         eventName5 = (TextView)findViewById(R.id.eventCategoryEvent5);
         eventName6 = (TextView)findViewById(R.id.eventCategoryEvent6);
-        events =  MainActivity.user_profile.getItems().get(ViewSingleItemActivity.currentItemID).getEventHmap();
+        events =  MainActivity.user_profile.getItems().
+                get(ViewSingleItemActivity.currentItemID).getEventHmap();
         init();
     }
 

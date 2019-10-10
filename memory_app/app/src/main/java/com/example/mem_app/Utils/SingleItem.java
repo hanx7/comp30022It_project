@@ -17,7 +17,8 @@ public class SingleItem {
     private LinkedHashMap<String, Event> eventHmap;
 
 
-    public SingleItem(String item_name, String image_string, String item_description,String upload_username, String itemID) {
+    public SingleItem(String item_name, String image_string, String item_description,
+                      String upload_username, String itemID) {
         this.item_name = item_name;
         this.image_string = image_string;
         this.item_description = item_description;
@@ -34,7 +35,8 @@ public class SingleItem {
 
     // Method to retrieve all events under this item from database
     public HashMap<String, Event> getEventHmap() {
-        String resp = MainActivity.processor.viewEventHttpSend(MainActivity.user_profile.user_name, MainActivity.user_profile.user_pwd, itemID);
+        String resp = MainActivity.processor.viewEventHttpSend(MainActivity.user_profile.user_name,
+                MainActivity.user_profile.user_pwd, itemID);
         if (!resp.equals("")) {
             String events[] = resp.split("%%IMAGE_SPLITOR%%");
 
@@ -50,9 +52,8 @@ public class SingleItem {
                 String itemID = eventElements[5];
                 String eventID = eventElements[6];
 
-                //            Log.d("debug-item", itemName);
-
-                Event event = new Event(eventTitle, eventContent, eventTime, eventImage, itemName, itemID, eventID);
+                Event event = new Event(eventTitle, eventContent, eventTime,
+                        eventImage, itemName, itemID, eventID);
                 eventHmap.put(eventTitle, event);
             }
         }

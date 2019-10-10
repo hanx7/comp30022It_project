@@ -44,12 +44,12 @@ public class AddEventActivity extends AppCompatActivity {
 
     // when add button is clicked, add user input data into database
     public void onAddEventButtonClick(View view){
-        final String eventTitle = ((TextView) super.findViewById(R.id.addEventTitle)).getText().toString();
-        final String eventContent = ((TextView) super.findViewById(R.id.addEventContent)).getText().toString();
-        //String dateString = ((TextView) super.findViewById(R.id.addEventDate)).getText().toString();
-        //DateFormat formatter = new SimpleDateFormat("hh:mm:ss a");
-        //final Date eventTime = formatter.parse(dateString);
-        final String eventTime = ((TextView) super.findViewById(R.id.addEventDate)).getText().toString();
+        final String eventTitle = ((TextView) super.findViewById(
+                R.id.addEventTitle)).getText().toString();
+        final String eventContent = ((TextView) super.findViewById(
+                R.id.addEventContent)).getText().toString();
+        final String eventTime = ((TextView) super.findViewById(
+                R.id.addEventDate)).getText().toString();
         final String eventImage = imageString;
         final String username = MainActivity.user_profile.user_name;
         final String userPassword = MainActivity.user_profile.user_pwd;
@@ -107,7 +107,8 @@ public class AddEventActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Choose from Gallery"))
                 {
-                    Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    Intent intent = new Intent(
+                 Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
                 }
                 else if (options[item].equals("Cancel")) {
@@ -154,7 +155,6 @@ public class AddEventActivity extends AppCompatActivity {
         alertDialogBuilder.setPositiveButton("ok",null);
         AlertDialog ad = alertDialogBuilder.create();
         ad.setMessage(text);
-        //alertDialogBuilder.setPositiveButton("ok",null);
         ad.show();
     }
 }

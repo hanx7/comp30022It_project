@@ -97,7 +97,8 @@ public class ViewSingleItemActivity extends AppCompatActivity {
                     Log.v("see res", resp);
                     if (resp.equals("###DELETE_ITEM_SUCCESS###")) {
                         final CharSequence[] options = { "OK" };
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleItemActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ViewSingleItemActivity.this);
                         builder.setTitle("Success!");
                         builder.setItems(options, new DialogInterface.OnClickListener() {
 
@@ -115,7 +116,8 @@ public class ViewSingleItemActivity extends AppCompatActivity {
                     }
                     else if (resp.equals("###DELETE_ITEM_FAILED###")){
                         final CharSequence[] options = { "Cancel" };
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleItemActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ViewSingleItemActivity.this);
                         builder.setTitle("Failure!");
                         builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override

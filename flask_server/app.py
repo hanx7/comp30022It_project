@@ -99,7 +99,8 @@ def dbInsertItem(db, user_name, item_name, image_string, description):
     global global_item_id
     table = db[ITEM_TABLE]
     global_item_id = global_item_id + 1
-    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: image_string, ITEM_ID: global_item_id}
+    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description,
+                 IMAGE_STRING: image_string, ITEM_ID: global_item_id}
     print("I am here")
     print(table.insert_one(new_entry))
 
@@ -113,8 +114,6 @@ def dbCheckUserLogin(db, user_name, user_pwd):
         if entry_user_name == user_name and entry_user_pwd == user_pwd:
             return True
     return False
-    # search_res = filter(lambda u_p: u_p[USER_NAME] == user_name and u_p[USER_PWD] == user_pwd, list(table.find()))
-    # return (list(search_res) != [])
 
 
 def check_email_valid(email):
@@ -139,12 +138,15 @@ def dbCheckItemExistence(db, user_name, item_name):
     return False
 
 
-def dbInsertEvent(db, user_name, item_name, item_id, event_title, event_content, event_time, image_string):
+def dbInsertEvent(db, user_name, item_name, item_id, event_title, event_content,
+                  event_time, image_string):
     global global_event_id
     global_event_id = global_event_id + 1;
     table = db[EVENT_TABLE]
-    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: int(item_id), EVENT_TITLE: event_title,
-                 EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: image_string, EVENT_ID: global_event_id}
+    new_entry = {USER_NAME: user_name, ITEM_NAME: item_name,
+                 ITEM_ID: int(item_id), EVENT_TITLE: event_title,
+                 EVENT_CONTENT: event_content, EVENT_TIME: event_time,
+                 IMAGE_STRING: image_string, EVENT_ID: global_event_id}
     print(table.insert_one(new_entry))
 
 
@@ -230,7 +232,8 @@ def addEvent():
     print(data)
 
     if dbCheckUserLogin(mongo_db, user_name, user_pwd):
-        if (item_name == "") or (item_ID == "") or (event_title == "") or (event_time == "") or ((data == "null") and (event_content == "")):
+        if (item_name == "") or (item_ID == "") or (event_title == "") or (event_time == "") \
+                or ((data == "null") and (event_content == "")):
             print("add failed")
             return ADD_EVENT_FAILED
         else:
@@ -345,8 +348,8 @@ def edit_item():
     try:
         print("{}, {}, {}".format(i_id, item_name, description))
         table.delete_one({ITEM_ID: int(i_id)})
-        table.insert_one({USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: data, ITEM_ID: int(i_id)})
-        #table.replace_one({ITEM_ID: int(i_id)}, {USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description, IMAGE_STRING: data, ITEM_ID:str(i_id)})
+        table.insert_one({USER_NAME: user_name, ITEM_NAME: item_name, DESCRIPTION: description,
+                          IMAGE_STRING: data, ITEM_ID: int(i_id)})
         res += "###EDIT_ITEM_SUCCESS###"
         print("m1")
         return res
@@ -391,7 +394,8 @@ def edit_event():
         table.delete_one({EVENT_ID: int(event_id)})
 
         new_entry = {USER_NAME: user_name, ITEM_NAME: item_name, ITEM_ID: int(item_ID), EVENT_TITLE: event_title,
-                     EVENT_CONTENT: event_content, EVENT_TIME: event_time, IMAGE_STRING: data, EVENT_ID: global_event_id}
+                     EVENT_CONTENT: event_content, EVENT_TIME: event_time,
+                     IMAGE_STRING: data, EVENT_ID: global_event_id}
         print(table.insert_one(new_entry))
 
         res += "###EDIT_EVENT_SUCCESS###"

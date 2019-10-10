@@ -61,7 +61,8 @@ public abstract class Http extends Thread{
 
             // Send Content to Server
             OutputStream os = conn.getOutputStream();
-            os.write(content.getBytes("UTF-8")); //transfer the image string into binary code
+            //transfer the image string into binary code
+            os.write(content.getBytes("UTF-8"));
             os.close();
 
             // GET Server Text Reply

@@ -39,7 +39,8 @@ public class ViewSingleEventActivity extends AppCompatActivity {
         // Get event data from hashmap
         String eventIdentifier = getIntent().getExtras().getString("eventName");
         String itemID = ViewSingleItemActivity.currentItemID;
-        Event event = MainActivity.user_profile.getItemHmap().get(itemID).getEventHmap().get(eventIdentifier);
+        Event event = MainActivity.user_profile.
+                getItemHmap().get(itemID).getEventHmap().get(eventIdentifier);
         currentEvent = event;
 
         // Convert image string to bitmap
@@ -106,7 +107,8 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                     // If delete success
                     if (resp.equals("###DELETE_EVENT_SUCCESS###")) {
                         final CharSequence[] options = { "OK" };
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleEventActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ViewSingleEventActivity.this);
                         builder.setTitle("Success!");
                         builder.setItems(options, new DialogInterface.OnClickListener() {
 
@@ -116,7 +118,6 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                                     dialog.dismiss();
 
                                     // Return to home page
-//                                    Intent i = new Intent(getApplicationContext(), EventCategoryActivity.class);
                                     Intent i = new Intent(HomeActivity.context, HomeActivity.class);
                                     startActivity(i);
                                 }
@@ -127,7 +128,8 @@ public class ViewSingleEventActivity extends AppCompatActivity {
                     // If delete fails
                     else if (resp.equals("###DELETE_ITEM_FAILED###")){
                         final CharSequence[] options = { "Cancel" };
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewSingleEventActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ViewSingleEventActivity.this);
                         builder.setTitle("Failure!");
                         builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override

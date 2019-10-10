@@ -67,7 +67,8 @@ public class EditItemActivity extends AppCompatActivity{
 
         String name = text_item_name.getText().toString();
         String description = text_description.getText().toString();
-        String resp = MainActivity.processor.editItemHttpSend(name, description, image_string, user_name, user_pwd, item_ID);
+        String resp = MainActivity.processor.editItemHttpSend(name, description,
+                image_string, user_name, user_pwd, item_ID);
 
         if (resp.equals("###EDIT_ITEM_SUCCESS###")) {
             final CharSequence[] options = { "OK" };
@@ -120,8 +121,8 @@ public class EditItemActivity extends AppCompatActivity{
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Choose from Gallery"))
                 {
-                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    //Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    Intent intent = new Intent(Intent.ACTION_PICK,
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
                 }
                 else if (options[item].equals("Cancel")) {
