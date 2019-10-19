@@ -60,12 +60,12 @@ public class MyItemActivity extends AppCompatActivity {
         }
         if(numOfItem >= 2){
             item2 = (new ArrayList<SingleItem>(userItems.values())).get(1);
-            String item2Name = item1.getItem_name();
+            String item2Name = item2.getItem_name();
             itemName2.setText(item2Name);
         }
         if(numOfItem >= 3){
             item3 = (new ArrayList<SingleItem>(userItems.values())).get(2);
-            String item3Name = item1.getItem_name();
+            String item3Name = item3.getItem_name();
             itemName3.setText(item3Name);
         }
         if(numOfItem >= 4){

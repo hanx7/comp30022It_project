@@ -75,8 +75,11 @@ mongo_db = mongo_client[DB_NAME]
 mongo_db_list = mongo_client.list_database_names()
 print(mongo_db_list)
 # itemID
-global_item_id = len(list(mongo_db[ITEM_TABLE].find()))
+item_list = list(mongo_db[ITEM_TABLE].find())
+
+global_item_id = max([int(i["item_ID"]) for i in item_list])
 global_event_id = len(list(mongo_db[EVENT_TABLE].find()))
+
 
 def dbInsertUser(db, user_name, user_pwd, first_name, last_name, email, dob):
     table = db[USER_TABLE]
