@@ -30,6 +30,11 @@ public class UserInformationActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void onMainButtonCLick(View view){
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+
+    }
 
 
 }
