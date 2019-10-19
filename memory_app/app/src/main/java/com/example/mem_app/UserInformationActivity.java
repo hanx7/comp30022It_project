@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UserInformationActivity extends AppCompatActivity {
 
+    private String userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +18,7 @@ public class UserInformationActivity extends AppCompatActivity {
         setContentView(R.layout.user_info);
         final TextView profile_user_name = (TextView) super.findViewById(R.id.profile_user_name);
         profile_user_name.setText(MainActivity.user_profile.user_name);
+        userName = profile_user_name.getText().toString();
 
         final TextView profileFirstName = (TextView) super.findViewById(R.id.profile_first_name);
         profileFirstName.setText(MainActivity.user_profile.firstName);
@@ -25,10 +27,7 @@ public class UserInformationActivity extends AppCompatActivity {
         profilelastName.setText(MainActivity.user_profile.lastName);
     }
 
-    public void onProfileMyItemsClick(View view) {
-        Intent i = new Intent(this, MyCategoryActivity.class);
-        startActivity(i);
-    }
+
 
     public void onMainButtonCLick(View view){
         Intent i = new Intent(this, HomeActivity.class);
@@ -36,5 +35,9 @@ public class UserInformationActivity extends AppCompatActivity {
 
     }
 
-
+    public void onSeeItemsButtonClick(View view){
+        Intent i = new Intent(this, MyItemActivity.class);
+        i.putExtra("userName", userName);
+        startActivity(i);
+    }
 }

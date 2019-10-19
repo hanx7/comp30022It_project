@@ -108,7 +108,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="#4FC3F7"
-        android:onClick="onProfileMyItemsClick"
+        android:onClick="onSeeItemsButtonClick"
         android:text="See my items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
