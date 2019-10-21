@@ -10,8 +10,10 @@
         android:id="@+id/editEventCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#9CEEEAEA"
         android:onClick="onEventCancelButtonClick"
         android:text="@android:string/cancel"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,13 +46,13 @@
         android:id="@+id/editEventEditImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
         android:onClick="onEditEventImageButtonClick"
-        android:text="@string/edit_event_image"
+        android:text="edit memory image"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEventImage"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/editEventEdit"
@@ -78,5 +80,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEventEditImage"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.042" />
 </androidx.constraintlayout.widget.ConstraintLayout>

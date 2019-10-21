@@ -8,138 +8,162 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/eventCategoryNextPage3"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="216dp"
-        android:background="@drawable/ic_chevron_right_24px"
-        android:onClick="onNextButtonClick"
+        android:id="@+id/LogoutButton"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#9FF0B7A4"
+        android:onClick="onMainButtonClick"
+        android:text="@string/Main"
+        android:textColor="#3D6DA5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/eventCategoryLastPage"
-        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent6"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <Button
-        android:id="@+id/eventCategoryLastPage3"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="216dp"
-        android:background="@drawable/ic_chevron_left_24px"
-        android:onClick="onPreviousButtonClick"
+        android:id="@+id/PreviousButton"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#9FF0B7A4"
+        android:onClick="onBackButtonClick"
+        android:text="@string/go_back"
+        android:textColor="#3D6DA5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/eventCategoryNextPage"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventCategoryEvent6"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="416dp"
+        android:layout_height="190dp"
+        android:adjustViewBounds="true"
+        android:background="#43F3F0F0"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/my_category_background" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="232dp"
-        android:layout_height="82dp"
-        android:text="MyItems"
-        android:textColor="#000000"
+        android:layout_width="233dp"
+        android:layout_height="102dp"
+        android:fontFamily="@font/amita"
+        android:text="My Items"
+        android:textColor="#FFFCFC"
         android:textSize="56sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.174" />
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/scrollView2"
-        android:layout_width="412dp"
-        android:layout_height="480dp"
+        android:layout_width="411dp"
+        android:layout_height="371dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="-1dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="32dp"
-                android:background="#8050BBF1"
-                android:onClick="onItemButton1Click"
-                android:text="Item1:" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="24dp"
-                android:background="#8050BBF1"
-                android:onClick="onItemButton2Click"
-                android:text="Item2:" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="24dp"
-                android:background="#8050BBF1"
-                android:onClick="onItemButton3Click"
-                android:text="Item3:" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="24dp"
-                android:background="#8050BBF1"
-                android:onClick="onItemButton4Click"
-                android:text="Item4:" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0">
 
 
-        </LinearLayout>
-    </ScrollView>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="290dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#52CED3D8"
+            android:fontFamily="@font/abeezee"
+            android:onClick="onItemButton1Click"
+            android:text="Item1:"
+            android:textColor="#F19AAB"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/PreviousButton"
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="290dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#52CED3D8"
+            android:fontFamily="@font/abeezee"
+            android:onClick="onItemButton2Click"
+            android:text="Item2:"
+            android:textColor="#3A6FA1"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="290dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#52CED3D8"
+            android:fontFamily="@font/abeezee"
+            android:onClick="onItemButton3Click"
+            android:text="Item3:"
+            android:textColor="#F19AAB"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="290dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#52CED3D8"
+            android:fontFamily="@font/abeezee"
+            android:onClick="onItemButton4Click"
+            android:text="Item4:"
+            android:textColor="#3A6FA1"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+        <Button
+            android:id="@+id/eventCategoryNextPage3"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/ic_chevron_right_24px"
+            android:onClick="onNextButtonClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/eventCategoryLastPage3"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/ic_chevron_left_24px"
+            android:onClick="onPreviousButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="38dp"
-        android:background="#4FE91E63"
-        android:onClick="onBackButtonClick"
-        android:text="@string/go_back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/LogoutButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
-    <Button
-        android:id="@+id/LogoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="201dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginBottom="41dp"
-        android:background="#8300BCD4"
-        android:onClick="onMainButtonClick"
-        android:text="@string/Main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/PreviousButton"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

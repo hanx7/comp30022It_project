@@ -25,7 +25,8 @@
         android:layout_height="49dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="36dp"
-        android:background="#FFB74D"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FFB74D"
         android:onClick="onEditButtonClick"
         android:text="Edit"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,9 +36,9 @@
         android:id="@+id/editItemEditImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
         android:onClick="onEditImageButtonClick"
-        android:text="Edit Item Image"
+        android:text="Edit Artifact Image"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editItemImage" />
 
