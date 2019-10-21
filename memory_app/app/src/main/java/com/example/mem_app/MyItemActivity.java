@@ -19,7 +19,7 @@ import java.util.Map;
 public class MyItemActivity extends AppCompatActivity {
 
     HashMap<String, SingleItem> items;
-    HashMap<String, SingleItem> userItems = new HashMap<>();
+    HashMap<String, SingleItem> userItems ;
     String userName;
     TextView itemName1;
     TextView itemName2;
@@ -34,47 +34,83 @@ public class MyItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_category);
+        userItems =  new HashMap<>();
         // get the haspmap storing all items info
         userItems = MainActivity.user_profile.getItemHmap();
+
+        HashMap<String, SingleItem> single_userItems ;
+        single_userItems = new HashMap<>();
+
         userName = getIntent().getExtras().getString("userName");
+
         for(Map.Entry<String, SingleItem> item : userItems.entrySet()){
+            System.out.println("in\n");
             if(item.getValue().getUpload_username().equals(userName)){
-                userItems.put(item.getKey(), item.getValue());
+                System.out.println("in\n");
+                System.out.println("user name is "+ userName);
+                System.out.println("get upload user name is"+item.getValue().getUpload_username());
+                //userItems.put(item.getKey(), item.getValue());
+                single_userItems.put(item.getKey(), item.getValue());
             }
         }
         itemName1 = findViewById(R.id.button2);
         itemName2 = findViewById(R.id.button3);
         itemName3 = findViewById(R.id.button4);
         itemName4 = findViewById(R.id.button5);
-        init();
-    }
+        //init();
 
-
-    // initailize the show all item page, rendering items depending on how much items we have
-    private void init(){
-        numOfItem = userItems.size();
+        numOfItem = single_userItems.size();
+        System.out.println("size is "+numOfItem);
         if(numOfItem >= 1){
-            item1 = (new ArrayList<SingleItem>(userItems.values())).get(0);
+            item1 = (new ArrayList<SingleItem>(single_userItems.values())).get(0);
             String item1Name = item1.getItem_name();
             itemName1.setText(item1Name);
         }
         if(numOfItem >= 2){
-            item2 = (new ArrayList<SingleItem>(userItems.values())).get(1);
+            item2 = (new ArrayList<SingleItem>(single_userItems.values())).get(1);
             String item2Name = item2.getItem_name();
             itemName2.setText(item2Name);
         }
         if(numOfItem >= 3){
-            item3 = (new ArrayList<SingleItem>(userItems.values())).get(2);
+            item3 = (new ArrayList<SingleItem>(single_userItems.values())).get(2);
             String item3Name = item3.getItem_name();
             itemName3.setText(item3Name);
         }
         if(numOfItem >= 4){
-            item4 = (new ArrayList<SingleItem>(userItems.values())).get(3);
+            item4 = (new ArrayList<SingleItem>(single_userItems.values())).get(3);
             String item4Name = item4.getItem_name();
             itemName4.setText(item4Name);
         }
         HomeActivity.alert.dismiss();
     }
+
+
+    // initailize the show all item page, rendering items depending on how much items we have
+//    private void init(){
+//        numOfItem = single_userItems.size();
+//        System.out.println("size is "+numOfItem);
+//        if(numOfItem >= 1){
+//            item1 = (new ArrayList<SingleItem>(userItems.values())).get(0);
+//            String item1Name = item1.getItem_name();
+//            itemName1.setText(item1Name);
+//        }
+//        if(numOfItem >= 2){
+//            item2 = (new ArrayList<SingleItem>(userItems.values())).get(1);
+//            String item2Name = item2.getItem_name();
+//            itemName2.setText(item2Name);
+//        }
+//        if(numOfItem >= 3){
+//            item3 = (new ArrayList<SingleItem>(userItems.values())).get(2);
+//            String item3Name = item3.getItem_name();
+//            itemName3.setText(item3Name);
+//        }
+//        if(numOfItem >= 4){
+//            item4 = (new ArrayList<SingleItem>(userItems.values())).get(3);
+//            String item4Name = item4.getItem_name();
+//            itemName4.setText(item4Name);
+//        }
+//        HomeActivity.alert.dismiss();
+//    }
 
     // when image button is clicked on, first to check if the button stores item inside it
     // if yes then render the item info, otherwise do nothing
