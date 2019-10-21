@@ -196,14 +196,12 @@ public class EventCategoryActivity extends AppCompatActivity {
     public void onEventNextButtonClick(View view) {
         if (numOfEvents > page * 6) {
 
-
             eventName1.setText("");
             eventName2.setText("");
             eventName3.setText("");
             eventName4.setText("");
             eventName5.setText("");
             eventName6.setText("");
-
 
             if (numOfEvents > page * 6) {
                 event1 = (new ArrayList<Event>(events.values())).get(page * 6);
@@ -241,7 +239,6 @@ public class EventCategoryActivity extends AppCompatActivity {
             popAlert("No more Events! ");
         }
 
-
     }
 
     public void onEventCategoryHomeButton(View view) {
@@ -250,6 +247,12 @@ public class EventCategoryActivity extends AppCompatActivity {
     }
 
 
+
+    public void onEventCategoryReturnButton(View view) {
+        Intent i = new Intent(this, ViewSingleItemActivity.class);
+        i.putExtra("itemID", ViewSingleItemActivity.currentItemID);
+        startActivity(i);
+    }
 
 
 
@@ -260,6 +263,5 @@ public class EventCategoryActivity extends AppCompatActivity {
         ad.setMessage(text);
         ad.show();
     }
-
 
 }

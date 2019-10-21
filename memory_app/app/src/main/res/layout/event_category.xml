@@ -32,6 +32,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="349dp"
         android:background="?attr/homeAsUpIndicator"
+        android:onClick="onEventCategoryReturnButton"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
