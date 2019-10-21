@@ -244,6 +244,14 @@ public class EventCategoryActivity extends AppCompatActivity {
 
     }
 
+    public void onEventCategoryHomeButton(View view) {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+    }
+
+
+
+
 
     // this function is to pop a alert message inside a box
     private void popAlert(String text){
@@ -252,4 +260,6 @@ public class EventCategoryActivity extends AppCompatActivity {
         ad.setMessage(text);
         ad.show();
     }
+
+
 }
