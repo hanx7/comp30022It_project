@@ -92,8 +92,6 @@ public class ViewAllItemsActivity extends AppCompatActivity {
         HomeActivity.alert.dismiss();
     }
 
-
-
     // when image button is clicked on, first to check if the button stores item inside it
     // if yes then render the item info, otherwise do nothing
     public void onImgButton1Click(View view){

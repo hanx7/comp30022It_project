@@ -30,8 +30,6 @@ public class HomeActivity extends AppCompatActivity{
         context = getApplicationContext();
     }
 
-
-
     public void onViewAllItemsButtonClick(View view) {
         alert.setMessage("Loading Artifacts");
         alert.setCanceledOnTouchOutside(false);
@@ -56,6 +54,4 @@ public class HomeActivity extends AppCompatActivity{
         Intent i = new Intent(this, AddItemActivity.class);
         startActivity(i);
     }
-
-
 }

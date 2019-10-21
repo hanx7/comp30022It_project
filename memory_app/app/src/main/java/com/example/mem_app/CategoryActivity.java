@@ -13,6 +13,5 @@ public class CategoryActivity extends AppCompatActivity {
         // Show login page
         setContentView(R.layout.category);
         Intent intent = getIntent();
-
     }
 }

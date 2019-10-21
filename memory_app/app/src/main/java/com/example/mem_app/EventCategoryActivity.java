@@ -57,7 +57,6 @@ public class EventCategoryActivity extends AppCompatActivity {
         init();
     }
 
-
     // initailize page, show events depending on how much events we have
     private void init(){
 
@@ -103,8 +102,6 @@ public class EventCategoryActivity extends AppCompatActivity {
     }
 
 
-
-
     // when button is clicked on, go to event info page
     public void oneventCategoryEvent1Click(View view){
         int num = numOfEvents - (page-1)*6;
@@ -114,7 +111,6 @@ public class EventCategoryActivity extends AppCompatActivity {
             startActivity(i);
         }
     }
-
 
     public void oneventCategoryEvent2Click(View view){
         int num = numOfEvents - (page-1)*6;
@@ -161,7 +157,6 @@ public class EventCategoryActivity extends AppCompatActivity {
         }
     }
 
-
     public void onEventPrevButtonClick(View view) {
         if (page > 1) {
             page--;
@@ -188,7 +183,6 @@ public class EventCategoryActivity extends AppCompatActivity {
             popAlert("No more Events! ");
         }
     }
-
 
 
 //    // when next page button is clicked on, first to decide how many items can be shown in the next
@@ -246,15 +240,11 @@ public class EventCategoryActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-
-
     public void onEventCategoryReturnButton(View view) {
         Intent i = new Intent(this, ViewSingleItemActivity.class);
         i.putExtra("itemID", ViewSingleItemActivity.currentItemID);
         startActivity(i);
     }
-
-
 
     // this function is to pop a alert message inside a box
     private void popAlert(String text){
@@ -263,5 +253,4 @@ public class EventCategoryActivity extends AppCompatActivity {
         ad.setMessage(text);
         ad.show();
     }
-
 }

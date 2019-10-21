@@ -30,7 +30,6 @@ public class EditEventActivity extends AppCompatActivity {
     TextView eventTitle;
     TextView eventStory;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +39,6 @@ public class EditEventActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         context = getApplicationContext();
-
 
         // Display current information of event: title, date, image, description
         eventImage = (ImageView) findViewById(R.id.editEventImage);
@@ -111,7 +109,6 @@ public class EditEventActivity extends AppCompatActivity {
             });
             builder.show();
         }
-
     }
 
     // return to current event activity
@@ -141,7 +138,6 @@ public class EditEventActivity extends AppCompatActivity {
             }
         });
         builder.show();
-
     }
 
     // set new selected image on screen
@@ -195,6 +191,4 @@ public class EditEventActivity extends AppCompatActivity {
             return null;
         }
     }
-
-
 }

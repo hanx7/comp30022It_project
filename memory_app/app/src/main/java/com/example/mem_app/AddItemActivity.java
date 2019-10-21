@@ -26,7 +26,6 @@ public class AddItemActivity extends AppCompatActivity{
     private String image_string;
     public static Context context;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,7 +157,4 @@ public class AddItemActivity extends AppCompatActivity{
         ad.setMessage(text);
         ad.show();
     }
-
-
-
 }

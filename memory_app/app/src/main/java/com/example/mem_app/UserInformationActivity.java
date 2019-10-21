@@ -27,8 +27,6 @@ public class UserInformationActivity extends AppCompatActivity {
         profilelastName.setText(MainActivity.user_profile.lastName);
     }
 
-
-
     public void onMainButtonCLick(View view){
         Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);

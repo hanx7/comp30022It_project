@@ -33,7 +33,6 @@ public class EditItemActivity extends AppCompatActivity{
     TextView itemName;
     TextView itemDescription;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +100,6 @@ public class EditItemActivity extends AppCompatActivity{
             });
             builder.show();
         }
-
     }
 
     // return to ViewSingleItemActivity
@@ -131,7 +129,6 @@ public class EditItemActivity extends AppCompatActivity{
             }
         });
         builder.show();
-
     }
 
     // set new selected image on screen
@@ -185,6 +182,4 @@ public class EditItemActivity extends AppCompatActivity{
             return null;
         }
     }
-
-
 }

@@ -12,6 +12,5 @@ public class MyCategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Show login page
         setContentView(R.layout.my_category);
-
     }
 }
