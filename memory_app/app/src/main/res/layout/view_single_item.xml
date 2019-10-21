@@ -5,42 +5,24 @@
     android:id="@+id/linearLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6E6FA"
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/viewpage_item_name"
-        android:layout_width="239dp"
-        android:layout_height="36dp"
-        android:text="@string/itemname"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
-
     <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="285dp"
-        android:layout_height="236dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="164dp"
-        android:clickable="false"
-        android:contentDescription="TODO"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:id="@+id/imageView6"
+        android:layout_width="432dp"
+        android:layout_height="733dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/add_background"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-1dp" />
 
     <Button
         android:id="@+id/homeButton"
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:layout_marginBottom="16dp"
-        android:background="#AED581"
+        android:background="#9280DEEA"
         android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logoutButton"
@@ -54,7 +36,8 @@
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="16dp"
-        android:background="#F0FC8B8B"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#9CEEEAEA"
         android:text="@string/previous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,21 +50,48 @@
         android:layout_height="55dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:background="#F0FC8B8B"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#9CEEEAEA"
         android:text="@string/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.968" />
 
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="334dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="160dp"
+        android:background="#9CEEEAEA"
+        android:clickable="false"
+        android:contentDescription="TODO"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/viewpage_item_name"
+        android:layout_width="327dp"
+        android:layout_height="52dp"
+        android:text="@string/itemname"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
+
     <TextView
         android:id="@+id/viewpage_item_description"
-        android:layout_width="344dp"
-        android:layout_height="198dp"
+        android:layout_width="330dp"
+        android:layout_height="189dp"
+        android:layout_marginBottom="112dp"
         android:text="@string/description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginImage"
         app:layout_constraintVertical_bias="0.177" />

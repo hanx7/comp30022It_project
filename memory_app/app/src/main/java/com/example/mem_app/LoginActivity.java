@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Show login page
-        setContentView(R.layout.edit_event);
+        setContentView(R.layout.login);
     }
 
     public void onLoginButtonClick(View view) {
