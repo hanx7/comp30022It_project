@@ -30,13 +30,10 @@ public class HomeActivity extends AppCompatActivity{
         context = getApplicationContext();
     }
 
-    public void onCategoryButtonClick(View view) {
-        Intent i = new Intent(this, EventCategoryActivity.class);
-        startActivity(i);
-    }
+
 
     public void onViewAllItemsButtonClick(View view) {
-        alert.setMessage("Loading Images");
+        alert.setMessage("Loading Artifacts");
         alert.setCanceledOnTouchOutside(false);
         alert.show();
 

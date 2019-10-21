@@ -30,6 +30,7 @@ public class ViewSingleItemActivity extends AppCompatActivity {
     public static Bitmap imageBitmap;
     public static CharSequence itemNameText;
     public static CharSequence itemDescriptionText;
+    public static AlertDialog alert;
 
 
     @Override
@@ -37,6 +38,8 @@ public class ViewSingleItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Show item info page
         setContentView(R.layout.item_info);
+        alert = (new AlertDialog.Builder(this)).create();
+
         itemImage = (ImageView)findViewById(R.id.itemInfoImage);
         itemName = (TextView)findViewById(R.id.itemInfoName);
         itemDescription = (TextView)findViewById(R.id.itemInfoStory);
@@ -142,6 +145,10 @@ public class ViewSingleItemActivity extends AppCompatActivity {
     }
 
     public void onSingleItemGoBackButton(View view) {
+        alert.setMessage("Loading Artifacts");
+        alert.setCanceledOnTouchOutside(false);
+        alert.show();
+
         Intent i = new Intent(this, ViewAllItemsActivity.class);
         startActivity(i);
     }
