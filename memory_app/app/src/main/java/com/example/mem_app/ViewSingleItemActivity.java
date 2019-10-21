@@ -72,9 +72,11 @@ public class ViewSingleItemActivity extends AppCompatActivity {
     // go to EventCategoryActivity
     public void onGoToEventButtonClick(View view){
 
-        alert.setMessage("Loading Artifacts");
+
+        alert.setMessage("Loading Memories");
         alert.setCanceledOnTouchOutside(false);
         alert.show();
+
         Intent i = new Intent(this, EventCategoryActivity.class);
         startActivity(i);
     }
