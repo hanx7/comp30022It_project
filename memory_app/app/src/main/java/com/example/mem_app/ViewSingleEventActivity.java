@@ -22,6 +22,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
     TextView eventName;
     TextView eventStory;
     public static Event currentEvent;
+    public static AlertDialog alert;
 
 
     @Override
@@ -30,6 +31,7 @@ public class ViewSingleEventActivity extends AppCompatActivity {
         // Show corresponding xml page
         super.onCreate(savedInstanceState);
         setContentView(R.layout.events);
+        alert = (new AlertDialog.Builder(this)).create();
 
         // Get text view and image view from xml page
         eventImage = (ImageView)findViewById(R.id.eventImageView);
@@ -67,7 +69,11 @@ public class ViewSingleEventActivity extends AppCompatActivity {
     }
 
     // Return to EventCategoryActivity
-    public void onGoBackButtonClick(View view) {
+    public void onSingleEventGoBackButtonClick(View view) {
+
+        alert.setMessage("Loading Memories");
+        alert.setCanceledOnTouchOutside(false);
+        alert.show();
         Intent i = new Intent(this, EventCategoryActivity.class);
         startActivity(i);
     }
