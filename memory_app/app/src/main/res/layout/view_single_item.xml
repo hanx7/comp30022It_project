@@ -8,15 +8,6 @@
     android:orientation="vertical">
 
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="432dp"
-        android:layout_height="733dp"
-        android:scaleType="centerCrop"
-        app:srcCompat="@mipmap/add_background"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="-1dp" />
-
     <Button
         android:id="@+id/homeButton"
         android:layout_width="113dp"
@@ -59,6 +50,15 @@
         app:layout_constraintVertical_bias="0.968" />
 
     <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="432dp"
+        android:layout_height="733dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/add_background" />
+
+    <ImageView
         android:id="@+id/item_image"
         android:layout_width="334dp"
         android:layout_height="248dp"
@@ -95,5 +95,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginImage"
         app:layout_constraintVertical_bias="0.177" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
