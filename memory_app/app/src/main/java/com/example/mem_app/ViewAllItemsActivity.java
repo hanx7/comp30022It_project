@@ -10,17 +10,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-
 import java.lang.String;
 import java.util.ArrayList;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.widget.TextView;
-
 import java.util.HashMap;
-
 import com.example.mem_app.Utils.SingleItem;
 
 public class ViewAllItemsActivity extends AppCompatActivity {
