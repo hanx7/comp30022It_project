@@ -7,15 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="432dp"
-        android:layout_height="733dp"
-        android:scaleType="centerCrop"
-        app:srcCompat="@mipmap/add_background"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="-1dp" />
-
     <Button
         android:id="@+id/homeButton"
         android:layout_width="113dp"
@@ -69,17 +60,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.968" />
 
-
     <Button
         android:id="@+id/addItemUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
-        android:backgroundTint="#C6EEEAEA"
+        android:backgroundTint="#9CEEEAEA"
         android:onClick="onUploadButtonClick"
         android:text="Upload Item Image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addItemImage" />
+
 
     <Button
         android:id="@+id/addItemAdd"
@@ -124,6 +115,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="432dp"
+        android:layout_height="733dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/add_background" />
+
+    <ImageView
         android:id="@+id/addItemImage"
         android:layout_width="258dp"
         android:layout_height="215dp"
@@ -134,5 +134,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addItemName"
         tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
