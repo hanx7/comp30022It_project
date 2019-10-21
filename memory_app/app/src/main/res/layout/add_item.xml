@@ -69,17 +69,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.968" />
 
+
     <Button
         android:id="@+id/addItemUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="108dp"
         android:backgroundTint="#9CEEEAEA"
         android:onClick="onUploadButtonClick"
-        android:text="Upload Item Image"
+        android:text="Upload Artifact Image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addItemImage" />
-
 
     <Button
         android:id="@+id/addItemAdd"
