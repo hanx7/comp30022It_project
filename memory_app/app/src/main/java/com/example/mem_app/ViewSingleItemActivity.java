@@ -71,6 +71,8 @@ public class ViewSingleItemActivity extends AppCompatActivity {
         Intent i = new Intent(this, EventCategoryActivity.class);
         startActivity(i);
     }
+
+
     // Go to EditItemButtonActivity
     public void onEditButtonClick(View view) {
         Intent i = new Intent(this, EditItemActivity.class);
@@ -137,6 +139,11 @@ public class ViewSingleItemActivity extends AppCompatActivity {
         });
         builder.show();
 
+    }
+
+    public void onSingleItemGoBackButton(View view) {
+        Intent i = new Intent(this, ViewAllItemsActivity.class);
+        startActivity(i);
     }
 
 }
