@@ -77,7 +77,10 @@ print(mongo_db_list)
 # itemID
 item_list = list(mongo_db[ITEM_TABLE].find())
 
-global_item_id = max([int(i["item_ID"]) for i in item_list])
+if len([int(i["item_ID"]) for i in item_list]) == 0:
+    global_item_id = 0
+else:
+    global_item_id = max([int(i["item_ID"]) for i in item_list])
 global_event_id = len(list(mongo_db[EVENT_TABLE].find()))
 
 
